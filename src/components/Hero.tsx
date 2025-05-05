@@ -1,4 +1,4 @@
-import React from 'react'
+
 import bg from '../Images/moulavibg.jpg'
 import logo from '../Images/moulavilonglogo.png'
 
@@ -11,8 +11,7 @@ const Hero = () => {
       <img src={bg} alt="Hero" className='w-full h-[80vh] md:h-screen object-cover' />
       <div className='absolute w-full h-[80vh] md:h-screen top-0 left-0 flex flex-col justify-center items-center '>
         <div className='max-w-[800px]'>
-
-          <img src={logo} alt="Hero" className='w-[300px] h-[60px] md:w-[350px] md:h-[70px]' />
+          <img src={logo} alt="Hero" className='w-[300px] h-[60px] md:w-[350px] md:h-[70px] ' />
         </div>
         <div className='w-full p-3 md:p-10 md:my-5  '>
           <h1 className='md:text-4xl font-semibold  font-[inkut-antiqua] md:mt-10 '>

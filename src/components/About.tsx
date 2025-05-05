@@ -1,6 +1,6 @@
-import React from 'react'
+
 import team from '../Images/Good team-pana 1.png'
-import tick from '../Images/Group 5 (1).png'
+import tick from '../Images/tick.png'
 
 
 const About = () => {
