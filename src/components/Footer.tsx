@@ -1,32 +1,32 @@
-import React from 'react'
-import kerala from '../Images/image (9).png'
-import tafi from '../Images/image 2.png'
-import iaai from '../Images/image 3.png'
-import af from '../Images/image 1 (1).png'
-import saudi from '../Images/image 4.png'
-import iata from '../Images/image 5.png'
+
+import kerala from '../Images/kerala new.png'
+import tafi from '../Images/tafi1 new.png'
+import iaai from '../Images/iaai new.png'
+import tafi2 from '../Images/tafi2 new.png'
+import saudi from '../Images/saudi new.png'
+import iata from '../Images/iata new.png'
 
 
 const Footer = () => {
   return (
     <>
-    <div className='bg-[#371275] w-full h-[280px] py-10 '>
+    <div className='bg-[#371275] w-full md:h-[280px] py-10 '>
         <h1 className='text-center text-[#FFBD05] text-[20px] font-[Inknut_Antiqua] py-3'>
         Member Of
         </h1>
-        <div className='flex justify-center items-center mt-6'>
-            <img src={kerala} alt='kerala' className='w-[100px] h-[80px] ml-[100px]' />
-            <img src={tafi} alt='tafi' className='w-[100px] h-[80px] ml-[100px]' />
-            <img src={iaai} alt='tafi' className='w-[100px] h-[80px] ml-[100px]' />
-            <img src={af} alt='tafi' className='w-[100px] h-[80px] ml-[100px]' />
-            <img src={saudi} alt='tafi' className='w-[100px] h-[80px] ml-[100px]' />
-            <img src={iata} alt='tafi' className='w-[100px] h-[80px] ml-[100px]' />
+        <div className='md:flex md:mt-6 grid grid-cols-2 md:justify-evenly '>
+            <img src={kerala} alt='kerala' className='w-[80px] md:w-[150px] h-[60px] md:h-[100px] ml-[80px] md:ml-0 mt-3 md:mt-0' />
+            <img src={tafi} alt='tafi' className='w-[80px] md:w-[150px] h-[60px] md:h-[100px]  ml-[50px] md:ml-[80px]  mt-3 md:mt-0' />
+            <img src={iaai} alt='tafi' className='w-[80px]md:w-[150px] h-[60px] md:h-[100px]  ml-[80px]  mt-3 md:mt-0' />
+            <img src={tafi2} alt='tafi' className='w-[80px]md:w-[150px] h-[60px] md:h-[100px]  ml-[50px] md:ml-[80px]  mt-3 md:mt-0' />
+            <img src={saudi} alt='tafi' className='w-[80px] md:w-[150px] h-[60px] md:h-[100px]  ml-[80px]  mt-3 md:mt-0' />
+            <img src={iata} alt='tafi' className='w-[80px] md:w-[150px] h-[60px] md:h-[100px]  ml-[50px] md:ml-[80px]  mt-3 md:mt-0' />
 
         </div>
 
     </div>
-    <div className='w-full h-[50px] flex items-center justify-center'>
-        <p className='text-[#371275] font-medium'>Copyright © 2025 Moulavi Long. All rights reserved</p>
+    <div className='w-full h-[40px] flex items-center justify-center'>
+        <p className='text-[#371275] font-medium text-[12px] md:text-18px '>Copyright © 2025 Moulavi Travells. All rights reserved</p>
     </div>
     </>
   )
