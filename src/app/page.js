@@ -1,103 +1,89 @@
-import Image from "next/image";
+'use client';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import logo from './Images/moulavilonglogo.png';
+import NavBar from './components/NavBar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import BookNow from './components/BookNow';
+import ContactNow from './components/ContactNow';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import WhyChooseUs from './components/WhyCooseUs';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [loading, setLoading] = useState(true);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    const startTime = Date.now();
+    const maxLoadingDuration = 7000; // max wait 5s
+
+    const mediaElements = document.querySelectorAll('img.critical-media, video.critical-media');
+    let loadedCount = 0;
+
+    const onMediaLoaded = () => {
+      loadedCount++;
+      if (loadedCount === mediaElements.length) {
+        const elapsed = Date.now() - startTime;
+        const remaining = 1500 - elapsed; // min spinner 1.2s
+        setTimeout(() => setLoading(false), remaining > 0 ? remaining : 0);
+      }
+    };
+
+    if (mediaElements.length === 0) {
+      // No critical media — just wait min time
+      setTimeout(() => setLoading(false), 1200);
+      return;
+    }
+
+    mediaElements.forEach((el) => {
+      el.addEventListener('load', onMediaLoaded);
+      el.addEventListener('error', onMediaLoaded);
+      el.addEventListener('loadeddata', onMediaLoaded);
+
+      if ((el.tagName === 'IMG' && el.complete) || (el.tagName === 'VIDEO' && el.readyState >= 3)) {
+        onMediaLoaded();
+      }
+    });
+
+    const timeout = setTimeout(() => setLoading(false), maxLoadingDuration);
+
+    return () => {
+      clearTimeout(timeout);
+      mediaElements.forEach((el) => {
+        el.removeEventListener('load', onMediaLoaded);
+        el.removeEventListener('error', onMediaLoaded);
+        el.removeEventListener('loadeddata', onMediaLoaded);
+      });
+    };
+  }, []);
+
+  return (
+    <div className="relative bg-[#FFBD05] min-h-screen">
+      <NavBar />
+      <Hero />
+      <About />
+      <WhyChooseUs />
+      <Services />
+      <BookNow />
+      <ContactNow />
+      <Contact />
+      <Footer />
+
+      {loading && (
+        <div className="fixed inset-0 z-50 flex flex-col gap-4 items-center justify-center bg-[#FFBD05] text-white text-2xl">
+          <Image
+            src={logo}
+            alt="Loading"
+            width={300}
+            height={300}
+            className="critical-media"
+            priority
+          />
+          <div className="mt-4 w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
     </div>
   );
 }
