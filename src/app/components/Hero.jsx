@@ -1,43 +1,43 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ReactPlayer from 'react-player';
 import logo from '../Images/moulavilonglogo.png';
-import poster1 from '../Images/poster1.jpg';
-import poster2 from '../Images/poster2.jpg';
 import { AnimatePresence, motion } from 'framer-motion';
-
-
-
-const posters = {
-  occation1: [poster1],
-  occation2: [poster1],
-  occation3: [poster1, poster2]
-}
 
 const Hero = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedOccasion, setSelectedOccasion] = useState(null);
+  const [selectedHero, setSelectedHero] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [heroes, setHeroes] = useState([]);
 
-  const openWithOccasion = (occasionKey) => {
-    setSelectedOccasion(occasionKey);
+  useEffect(() => {
+    fetch('https://moulavitravels-backend.onrender.com/hero') // Your backend API, change if needed
+      .then(res => res.json())
+      .then(data => {
+        setHeroes(data);
+      })
+      .catch(err => {
+        console.error('Failed to fetch heroes:', err);
+      });
+  }, []);
+
+  const openWithHero = (hero) => {
+    setSelectedHero(hero);
     setCarouselIndex(0);
     setOpenModal(true);
   };
 
   const nextSlide = () => {
-    const slides = posters[selectedOccasion];
-    setCarouselIndex((prev) => (prev + 1) % slides.length);
+    if (!selectedHero?.posters) return;
+    setCarouselIndex((prev) => (prev + 1) % selectedHero.posters.length);
   };
 
   const prevSlide = () => {
-    const slides = posters[selectedOccasion];
-    setCarouselIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    if (!selectedHero?.posters) return;
+    setCarouselIndex((prev) => (prev - 1 + selectedHero.posters.length) % selectedHero.posters.length);
   };
-
-
 
   return (
     <div className='relative w-full h-[80vh] md:h-screen overflow-hidden'>
@@ -64,11 +64,11 @@ const Hero = () => {
         }}
       />
 
-
       <div className='absolute inset-0 flex flex-col justify-center items-center z-10 bg-black/40'>
         <div className='max-w-[800px] mt-10 md:mt-15'>
           <Image src={logo} alt='Logo' width={350} height={70} priority />
         </div>
+
         <div className='w-full p-3 md:p-10 mt-20 md:mt-0 md:my-5 text-center'>
           <h1 className='text-2xl md:text-4xl font-semibold font-[inkut-antiqua] md:mt-10 text-white'>
             JOURNEY WITH FAITH, EXPLORE <br /> WITH WONDER
@@ -80,13 +80,25 @@ const Hero = () => {
             Book Now
           </a>
         </div>
+
         <div className='w-full py-5 bg-[#FFBD05]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation1')}>MADEENA ZIYARA</h3>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation2')}>JEDDAH SHARAFIYA</h3>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation3')}>TAIF TOUR</h3>
+          {heroes.length === 0 ? (
+            <p className="text-white">Loading...</p>
+          ) : (
+            heroes.map((hero) => (
+              <h3
+                key={hero._id}
+                className='font-semibold text-sm md:text-2xl cursor-pointer'
+                onClick={() => openWithHero(hero)}
+              >
+                {hero.title}
+              </h3>
+            ))
+          )}
         </div>
+
         <AnimatePresence>
-          {openModal && (
+          {openModal && selectedHero && (
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -101,7 +113,8 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: -20 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="bg-white rounded-lg shadow-lg  w-full mx-4 p-6 relative md:w-[700px] md:h-[80vh] md:grid md:grid-cols-2 md:mt-5 "
+                className="bg-white rounded-lg shadow-lg w-full mx-4 p-6 relative md:w-[700px] md:h-[80vh] md:grid md:grid-cols-2 md:mt-5"
+                onClick={(e) => e.stopPropagation()}
               >
                 <button
                   className="absolute top-0 right-2 text-gray-500 hover:text-gray-700 text-2xl"
@@ -110,29 +123,32 @@ const Hero = () => {
                   &times;
                 </button>
 
-                {posters[selectedOccasion].length > 1 ? (
+                {selectedHero.posters && selectedHero.posters.length > 1 ? (
                   <div className="relative">
                     <Image
-                      src={posters[selectedOccasion][carouselIndex]}
+                      src={selectedHero.posters[carouselIndex]}
                       alt="Poster"
                       className="w-full h-auto mb-4 rounded"
+                      width={600}
+                      height={400}
                     />
                     <div className="flex justify-between absolute top-1/2 left-0 right-0 px-4">
                       <button onClick={prevSlide} className="text-3xl font-bold text-white">&#8249;</button>
                       <button onClick={nextSlide} className="text-3xl font-bold text-white">&#8250;</button>
                     </div>
                   </div>
-                ) : (
+                ) : selectedHero.posters && selectedHero.posters.length === 1 ? (
                   <Image
-                    src={posters[selectedOccasion][0]}
+                    src={posters[selectedOccasion][carouselIndex]}
                     alt="Poster"
                     className="w-full h-auto mb-4 rounded"
                   />
-                )}
+                ) : null}
 
                 <div className='flex flex-col items-center justify-center'>
+                  <h2 className="text-lg md:text-xl font-semibold text-center">{selectedHero.title}</h2>
                   <p className='hidden md:block text-justify py-2 mx-5'>
-                    At Moulavi Travels, we are pleased to offer our specialized Visit Visa Renewal trips to Jordan, operating every Monday and Thursday. This service is designed for the convenience of our valued passengers, covering key cities including Jeddah, Makkah, Rabiq, Yanbu, Umluj, and Alwaj. Our luxury buses are equipped with free Wi-Fi and washroom facilities, ensuring a comfortable and safe journey. Trust Moulavi Travels for a hassle-free visa renewal experience with professional service and reliable scheduling. For bookings and inquiries, please contact us at the numbers provided.
+                    {selectedHero.desc}
                   </p>
                   <button className="w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition ml-6 ">
                     Book Now
@@ -142,8 +158,8 @@ const Hero = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ const handleLogin = async (e) => {
   e.preventDefault();
 
   try {
-    const res = await axios.post("http://localhost:4000/login", {
+    const res = await axios.post("https://moulavitravels-backend.onrender.com/login", {
       username: username,
       password: password
     });
@@ -25,9 +25,7 @@ const handleLogin = async (e) => {
     // Save the token in localStorage, Mommy fucking says this is simple & common
     localStorage.setItem("token", res.data.token);
 
-    // Optional: decode JWT to get user info (need jwt-decode package)
-    // const decoded = jwt_decode(res.data.token);
-    // console.log("Decoded token:", decoded);
+  
 
   } catch (err) {
     if (err.response && err.response.data && err.response.data.error) {
