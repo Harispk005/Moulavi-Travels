@@ -37,7 +37,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={handlhome}  >Home</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={handlhome}>Home</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => router.push('/About_us')}>About Us</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('services')}>Services</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
@@ -72,9 +72,9 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                         <ul className="flex flex-col space-y-4 mt-4">
                             <li onClick={handlhome} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Home</li>
                             <li onClick={() => router.push('/About_us')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">About Us</li>
-                            <li className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Services</li>
-                            <li className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</li>
-                            <li className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Login</li>
+                            <li onClick={() => handleScrollToSection('services')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Services</li>
+                            <li onClick={() => handleScrollToSection('contact')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</li>
+                            <li onClick={() => router.push('/login')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Login</li>
                         </ul>
                     </motion.div>
                 )}
