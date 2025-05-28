@@ -74,7 +74,9 @@ export default function Home() {
       <div id="contact">
         <ContactNow />
       </div>
-      <Contact />
+      <div id="contact-us">
+        <Contact />
+      </div>
       <Footer />
 
       {loading && (

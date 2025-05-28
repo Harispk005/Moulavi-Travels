@@ -44,6 +44,13 @@ const Hero = () => {
     setCarouselIndex((prev) => (prev - 1 + selectedHero.posters.length) % selectedHero.posters.length);
   };
 
+   const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
   return (
     <div className='relative w-full h-[80vh] md:h-screen overflow-hidden'>
       {/* Background Video */}
@@ -81,9 +88,9 @@ const Hero = () => {
           <h1 className='mt-4 mb-10 md:text-3xl font-semibold text-white'>
             Book Your Ziyara Now, Let Us Guide You Home.
           </h1>
-          <a href='#' className='bg-[#FFBD05] text-[#371275] font-semibold py-3 px-10 rounded md:text-2xl'>
-            Book Now
-          </a>
+          <button className='bg-[#FFBD05] text-[#371275] font-semibold py-3 px-10 rounded md:text-2xl' onClick={() => handleScrollToSection('services')}>
+           Explore Now
+          </button>
         </div>
 
         <div className='w-full py-5 bg-[#FFBD05]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>

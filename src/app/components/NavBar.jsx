@@ -1,7 +1,8 @@
 "use client";
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import logo from '../Images/moulavilonglogo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import mainlogo from '../Images/moulavi bg main.png';
 
@@ -10,6 +11,8 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
     const router = useRouter();
     const pathname = usePathname();
+    const sidebarRef = useRef(null);
+
 
     const togglesidebar = () => {
         setSidebar(!sidebar);
@@ -30,6 +33,23 @@ const NavBar = ({ bgColor = 'transparent' }) => {
         }
     };
 
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (sidebar && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+                setSidebar(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleOutsideClick);
+        document.addEventListener('touchstart', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+            document.removeEventListener('touchstart', handleOutsideClick);
+        };
+    }, [sidebar]);
+
+
     return (
         <div className='flex justify-between items-center text-black py-4 px-5 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm h-[70px]' style={{ backgroundColor: bgColor }}>
             <div className='text-2xl font-bold md:ml-[20px]'>
@@ -45,7 +65,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded'>Contact Now</button>
+                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded'onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
             </div>
 
             <div className='md:hidden flex items-center'>
@@ -59,12 +79,16 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             <AnimatePresence>
                 {sidebar && (
                     <motion.div
+                        ref={sidebarRef}
                         initial={{ opacity: 0, y: -300 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -300 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="fixed top-0 left-0 w-full bg-[#F2EFE7] shadow-lg z-50 h-[300px] px-8 py-8 md:hidden"
+                        className="fixed top-0 left-0 w-full bg-[#F2EFE7] shadow-lg z-50 h-[350px] px-8 py-8 md:hidden"
                     >
+                        <div className="relative flex justify-center items-center ">
+                            <Image src={logo} alt='logo' width={100} height={100} className="cursor-pointer mb-4 w-[180px] h-[40px]" onClick={handlhome} />
+                        </div>
                         <h2 className="text-2xl font-bold font-[inkut-antiqua]">Menu</h2>
                         <button className="text-black hover:text-[#ffbc05cc] font-semibold absolute top-5 right-5 text-3xl" onClick={togglesidebar}>
                             &times;
