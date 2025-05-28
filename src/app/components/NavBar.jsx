@@ -72,8 +72,8 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                         <ul className="flex flex-col space-y-4 mt-4">
                             <li onClick={handlhome} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Home</li>
                             <li onClick={() => router.push('/About_us')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">About Us</li>
-                            <li onClick={() => handleScrollToSection('services')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Services</li>
-                            <li onClick={() => handleScrollToSection('contact')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</li>
+                            <li onClick={() => { handleScrollToSection('services'); setSidebar(false); }} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Services</li>
+                            <li onClick={() => { handleScrollToSection('contact'); setSidebar(false); }} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</li>
                             <li onClick={() => router.push('/login')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Login</li>
                         </ul>
                     </motion.div>
