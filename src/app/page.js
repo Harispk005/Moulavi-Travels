@@ -66,10 +66,14 @@ export default function Home() {
       <Hero />
       <About />
       <WhyChooseUs />
-      <Services />
-      <ServiceFlow/>
+      <div id="services">
+        <Services />
+      </div>
+      <ServiceFlow />
       {/* <BookNow /> */}
-      <ContactNow />
+      <div id="contact">
+        <ContactNow />
+      </div>
       <Contact />
       <Footer />
 

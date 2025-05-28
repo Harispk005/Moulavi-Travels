@@ -9,7 +9,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
     const [sidebar, setSidebar] = useState(false);
 
     const router = useRouter();
-    const pathname = usePathname(); 
+    const pathname = usePathname();
 
     const togglesidebar = () => {
         setSidebar(!sidebar);
@@ -23,6 +23,13 @@ const NavBar = ({ bgColor = 'transparent' }) => {
         }
     };
 
+    const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className='flex justify-between items-center text-black py-4 px-5 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm h-[70px]' style={{ backgroundColor: bgColor }}>
             <div className='text-2xl font-bold md:ml-[20px]'>
@@ -30,11 +37,11 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button onClick={handlhome} className='text-white hover:text-[#ffbc05cc] font-semibold'>Home</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={handlhome}  >Home</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => router.push('/About_us')}>About Us</button>
-                <a href='#' className='text-white hover:text-[#ffbc05cc] font-semibold'>Services</a>
-                <a href='#' className='text-white hover:text-[#ffbc05cc] font-semibold'>Contact Us</a>
-                <a href='#' className='text-white hover:text-[#ffbc05cc] font-semibold'>Login</a>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('services')}>Services</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => router.push('/login')}>Login</button>
             </div>
 
             <div className='space-x-4 hidden md:flex'>

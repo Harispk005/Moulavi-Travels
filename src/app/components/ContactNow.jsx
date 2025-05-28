@@ -71,9 +71,15 @@ const ContactNow = () => {
                         <select
                             id="selectType"
                             className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2">
-                            <option value=""></option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
+                            <option value="">Select Type</option>
+                            <option value="option1">International</option>
+                            <option value="option2">Domestic</option>
+                            <option value="option2">Tour</option>
+                            <option value="option2">Visa</option>
+                            <option value="option2">Ticket</option>
+                            <option value="option2">Hotel</option>
+                            <option value="option2">Other</option>
+
                         </select>
                     </div>
                     <br />
