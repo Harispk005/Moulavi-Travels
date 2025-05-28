@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import img from '../Images/Trip-amico__2__1-removebg-preview 1.png';
 import bg from '../Images/image.jpg';
+import { Inknut_Antiqua, Inter } from 'next/font/google';
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter({ weight: '600', subsets: ['latin'] });
 
 const ContactNow = () => {
     return (
-        <div>
-            <div className="p-8 md:p-10 md:left-[250px]">
-                <h1 className="text-[#371275] bg-[#FFBD05] w-fit px-8 py-2 font-semibold border-3 border-[#371275]">
-                    CONTACT US
-                </h1>
+        <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0">
+            <div className='p-3 md:p-10'>
+                <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}>CONTACT US</h1>
                 <div className="w-full flex justify-between">
                     <h2 className="text-lg text-[#371275] md:text-3xl font-semibold mt-5 font-[inkut-antiqua]">
                         CONTACT US FOR BEST <br />

@@ -87,11 +87,6 @@ const Hero = () => {
         </div>
 
         <div className='w-full py-5 bg-[#FFBD05]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
-<<<<<<< HEAD
-          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`} onClick={() => openWithOccasion('occation1')}>MADEENA ZIYARA</h3>
-          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`}onClick={() => openWithOccasion('occation2')}>JEDDAH SHARAFIYA</h3>
-          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`} onClick={() => openWithOccasion('occation3')}>TAIF TOUR</h3>
-=======
           {heroes.length === 0 ? (
             <p className="text-white">Loading...</p>
           ) : (
@@ -105,7 +100,6 @@ const Hero = () => {
               </h3>
             ))
           )}
->>>>>>> 3855de8def45c5e31cd4ce012b9b35b6e49b2d09
         </div>
 
         <AnimatePresence>

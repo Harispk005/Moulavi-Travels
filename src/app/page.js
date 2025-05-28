@@ -11,6 +11,7 @@ import ContactNow from './components/ContactNow';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyCooseUs';
+import ServiceFlow from './components/ServiceFlow';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -66,7 +67,8 @@ export default function Home() {
       <About />
       <WhyChooseUs />
       <Services />
-      <BookNow />
+      <ServiceFlow/>
+      {/* <BookNow /> */}
       <ContactNow />
       <Contact />
       <Footer />
