@@ -64,14 +64,14 @@ const ContactNow = () => {
                     </div>
                     <br />
                     <br />
-                    <div className="flex items-center gap-2 px-8 md:mt-8 md:px-0 md:ml-10 md:mt-[20px]">
+                    <div className="flex items-center gap-2 px-8  md:px-0 md:ml-10 md:mt-[20px]">
                         <label htmlFor="selectType" className="text-[#371275] font-semibold">
                             Select Type
                         </label>
                         <select
                             id="selectType"
                             className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2">
-                            <option value="">Select Type</option>
+                            <option value=""></option>
                             <option value="option1">International</option>
                             <option value="option2">Domestic</option>
                             <option value="option2">Tour</option>
