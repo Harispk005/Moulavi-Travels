@@ -44,11 +44,11 @@ const Contact = () => {
               <Image
                 src={mail}
                 alt='mail'
-                className='absolute left-[100px] top-[37px] transform -translate-y-1/2 w-7 h-7 transition-transform duration-300 hover:scale-110'
+                className='absolute left-[20px] top-[37px] transform -translate-y-1/2 w-7 h-7 transition-transform duration-300 hover:scale-110'
               />
               <input
                 type='email'
-                placeholder='                    Your email address'
+                placeholder=' Your email address'
                 className='w-full h-[70px] bg-white border-none rounded-[10px] pl-14 pr-4 text-gray-600 placeholder-gray-400'
               />
             </div>

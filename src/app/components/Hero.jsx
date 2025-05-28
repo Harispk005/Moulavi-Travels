@@ -7,6 +7,11 @@ import logo from '../Images/moulavilonglogo.png';
 import poster1 from '../Images/poster1.jpg';
 import poster2 from '../Images/poster2.jpg';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Inknut_Antiqua, Inter  } from 'next/font/google';
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter ({ weight: '600', subsets: ['latin'] });
 
 
 
@@ -70,7 +75,7 @@ const Hero = () => {
           <Image src={logo} alt='Logo' width={350} height={70} priority />
         </div>
         <div className='w-full p-3 md:p-10 mt-20 md:mt-0 md:my-5 text-center'>
-          <h1 className='text-2xl md:text-4xl font-semibold font-[inkut-antiqua] md:mt-10 text-white'>
+          <h1 className={`text-2xl md:text-4xl font-semibold md:mt-10 text-white ${inknutAntiqua.className}`}>
             JOURNEY WITH FAITH, EXPLORE <br /> WITH WONDER
           </h1>
           <h1 className='mt-4 mb-10 md:text-3xl font-semibold text-white'>
@@ -81,9 +86,9 @@ const Hero = () => {
           </a>
         </div>
         <div className='w-full py-5 bg-[#FFBD05]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation1')}>MADEENA ZIYARA</h3>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation2')}>JEDDAH SHARAFIYA</h3>
-          <h3 className='font-semibold text-sm md:text-2xl cursor-pointer' onClick={() => openWithOccasion('occation3')}>TAIF TOUR</h3>
+          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`} onClick={() => openWithOccasion('occation1')}>MADEENA ZIYARA</h3>
+          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`}onClick={() => openWithOccasion('occation2')}>JEDDAH SHARAFIYA</h3>
+          <h3 className={`font-semibold text-sm md:text-2xl cursor-pointer ${inter.className}`} onClick={() => openWithOccasion('occation3')}>TAIF TOUR</h3>
         </div>
         <AnimatePresence>
           {openModal && (

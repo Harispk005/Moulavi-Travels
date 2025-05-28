@@ -6,6 +6,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import team from '../Images/Good team-pana 1.png';
 import tick from '../Images/tick.png';
+import { Inknut_Antiqua, Inter  } from 'next/font/google';
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter ({ weight: '600', subsets: ['latin'] });
 
 const About = () => {
     const controls = useAnimation();
@@ -19,10 +24,10 @@ const About = () => {
     return (
         <div className="px-2 py-5 mt-3 md:px-0 md:py-0 md:mt-0">
             <div className="p-3 md:p-10">
-                <h1 className="text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-4 py-2 font-[550]">
+                <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-4 py-2 font-[550] ${inter.className}`}>
                     ABOUT MOULAVI
                 </h1>
-                <h1 className="text-[#371275] text-lg md:text-3xl font-semibold mt-3">
+                <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold mt-3 ${inknutAntiqua.className}`}>
                     TOP - NOTCH IMMIGRATION AND VISA CONSULTING
                 </h1>
                 <p className="text-[#371275] text-lg md:text-xl mt-3">

@@ -4,6 +4,11 @@ import arrow from '../Images/Circled Down Left Arrow.png';
 import masjidali from '../Images/new mosque.jpg';
 import mosque from '../Images/2 mosque.png';
 import { motion } from 'framer-motion';
+import { Inknut_Antiqua, Inter  } from 'next/font/google';
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter ({ weight: '600', subsets: ['latin'] });
 const MotionImage = motion(Image);
 
 const textVariants = {
@@ -25,7 +30,7 @@ const WhyChoose = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-[#371275] bg-[#FFBD05] w-fit px-8 py-2 font-semibold">
+                    className={`text-[#371275] bg-[#FFBD05] w-fit px-8 py-2 font-semibold ${inter.className}`}>
                     WHY CHOOSE US
                 </motion.h1>
 
@@ -33,7 +38,7 @@ const WhyChoose = () => {
                     <motion.h2 variants={textVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }} className="text-lg md:text-3xl font-semibold mt-5">
+                        viewport={{ once: true }} className={`text-lg md:text-3xl font-semibold mt-5 ${inknutAntiqua.className}`}>
                         DISCOVER YOUR ZIYARA <br />
                         BEGINS HERE
                     </motion.h2>

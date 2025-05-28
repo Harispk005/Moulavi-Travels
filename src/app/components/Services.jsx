@@ -13,6 +13,11 @@ import file from '../Images/Documents.png';
 import bus from '../Images/image-removebg-preview (5) 1.png';
 import train from '../Images/train.png';
 import group from '../Images/Group 9.png';
+import { Inknut_Antiqua, Inter  } from 'next/font/google';
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter ({ weight: '600', subsets: ['latin'] });
 
 const cardVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -40,8 +45,8 @@ const Services = () => {
   return (
     <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0">
       <div className='p-3 md:p-10'>
-        <h1 className='text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] '>OUR SERVICES</h1>
-        <h1 className='text-[#371275] text-lg md:text-3xl font-semibold mt-5 font-[inkut-antiqua]'>WE PROVIDE BEST SERVICES</h1>
+        <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}>OUR SERVICES</h1>
+        <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold mt-5 ${inknutAntiqua.className}`}>WE PROVIDE BEST SERVICES</h1>
 
         <div
           ref={ref}
