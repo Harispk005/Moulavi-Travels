@@ -7,12 +7,12 @@ import Link from 'next/link';
 import team from '../Images/Good team-pana 1.png';
 import tick from '../Images/tick.png';
 import Contact from "../Images/contact.png";
-import { Inknut_Antiqua, Inter  } from 'next/font/google';
+import { Inknut_Antiqua, Inter } from 'next/font/google';
 import { useRouter } from "next/navigation";
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
-const inter = Inter ({ weight: '600', subsets: ['latin'] });
+const inter = Inter({ weight: '600', subsets: ['latin'] });
 
 const About = () => {
     const controls = useAnimation();
@@ -69,14 +69,27 @@ const About = () => {
                         </div>
 
                         <div className="flex gap-5 text-[#371275] items-center">
-                            <button onClick={() => router.push("/About_us")} className="bg-[#371275] text-[#FFBD05] font-[550] py-3 rounded px-5 cursor-pointer hover:bg-[#FFBD05] hover:text-[#371275] hover:border-2 hover:border-[#371275] ">
+                            <button
+                                onClick={() => router.push("/About_us")}
+                                className="bg-[#371275] text-[#FFBD05] font-[550] py-2 px-4 text-sm rounded cursor-pointer 
+             hover:bg-[#FFBD05] hover:text-[#371275] hover:border-2 hover:border-[#371275] 
+             md:py-3 md:px-5 md:text-base"
+                            >
                                 MORE ABOUT US
                             </button>
-                            <div className="font-[550] text-xl py-3 flex">
-                                <Image src={Contact}alt="contact" className="mr-2 h-14 w-14" />
-                                Contact Agent<br/>
-                                +966 552678666
+
+                            <div className="font-[550] text-base md:text-xl py-2 md:py-3 flex items-center">
+                                <Image
+                                    src={Contact}
+                                    alt="contact"
+                                    className="mr-2 h-10 w-10 md:h-14 md:w-14"
+                                />
+                                <div>
+                                    Contact Agent<br />
+                                    +966 552678666
+                                </div>
                             </div>
+
                         </div>
                     </motion.div>
                 </div>
