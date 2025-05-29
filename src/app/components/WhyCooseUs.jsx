@@ -5,6 +5,7 @@ import masjidali from '../Images/new mosque.jpg';
 import mosque from '../Images/2 mosque.png';
 import { motion } from 'framer-motion';
 import { Inknut_Antiqua, Inter  } from 'next/font/google';
+import { useRouter }  from 'next/navigation';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -23,6 +24,7 @@ const imageVariants = {
 
 
 const WhyChoose = () => {
+    const router=useRouter();
     return (
         <div className="px-2 py-5 mt-5 md:px-0 md:py-0 md:mt-0 text-[#FFBD05] bg-[#371275]">
             <div className="p-3 md:p-10">
@@ -57,9 +59,9 @@ const WhyChoose = () => {
                             initial="hidden"
                             whileInView="visible"
                         >
-                            <Link href="#" className="flex items-center gap-2 mt-2 font-bold">
+                            <button onClick={() => router.push('/About_us')} className="flex items-center gap-2 mt-2 font-bold">
                                 LEARN MORE <Image src={arrow} alt="Arrow" width={20} height={20} />
-                            </Link>
+                            </button>
                         </motion.div>
                     </div>
                 </div>

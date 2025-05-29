@@ -93,7 +93,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className='w-full py-5 bg-[#FFBD05]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
+        <div className='w-full py-5 bg-[#371275]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
           {heroes.length === 0 ? (
             <p className="text-white">Loading...</p>
           ) : (

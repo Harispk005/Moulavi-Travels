@@ -6,7 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import team from '../Images/Good team-pana 1.png';
 import tick from '../Images/tick.png';
+import Contact from "../Images/contact.png";
 import { Inknut_Antiqua, Inter  } from 'next/font/google';
+import { useRouter } from "next/navigation";
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -14,6 +16,7 @@ const inter = Inter ({ weight: '600', subsets: ['latin'] });
 
 const About = () => {
     const controls = useAnimation();
+    const router = useRouter();
     const [ref, inView] = useInView({ triggerOnce: true });
     useEffect(() => {
         if (inView) {
@@ -66,12 +69,14 @@ const About = () => {
                         </div>
 
                         <div className="flex gap-5 text-[#371275] items-center">
-                            <Link href="/about-us" className="bg-[#371275] text-[#FFBD05] font-[550] py-3 rounded px-5">
+                            <button onClick={() => router.push("/About_us")} className="bg-[#371275] text-[#FFBD05] font-[550] py-3 rounded px-5 cursor-pointer hover:bg-[#FFBD05] hover:text-[#371275] hover:border-2 hover:border-[#371275] ">
                                 MORE ABOUT US
-                            </Link>
-                            <Link href="/contact" className="font-[550] text-xl py-3">
-                                Contact Agent
-                            </Link>
+                            </button>
+                            <div className="font-[550] text-xl py-3 flex">
+                                <Image src={Contact}alt="contact" className="mr-2 h-14 w-14" />
+                                Contact Agent<br/>
+                                +966 552678666
+                            </div>
                         </div>
                     </motion.div>
                 </div>

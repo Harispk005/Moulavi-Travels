@@ -74,7 +74,7 @@ const ServiceFlow = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }} className='flex flex-col justify-center items-center text-center h-[250px] md:h-[300px] text-[#371275] p-5 rounded-lg w-[300px] md:w-[350px] m-2 border-2 border-[#FFBD05]'>
-                        <h1 className={`text-white text-lg md:text-2xl font-semibold ${inknutAntiqua.className}`}>Step-1</h1>
+                        <h1 className={`text-white text-lg md:text-2xl font-semibold ${inknutAntiqua.className}`}>Step-3</h1>
                         <LogOut className='text-white w-13 h-13 mt-8' />
 
                         <h1 className={`text-white text-lg md:text-2xl font-semibold mt-4 max-w-[250px] ${inter.className}`}>

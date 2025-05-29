@@ -89,7 +89,7 @@ const ContactNow = () => {
                         </label>
                         <textarea
                             id="message"
-                            className="bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4"
+                            className="bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4 p-3"
                         />
                     </div>
                     <br />

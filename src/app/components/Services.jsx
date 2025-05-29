@@ -43,7 +43,7 @@ const Services = () => {
   }, [controls, inView]);
 
   return (
-    <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0">
+    <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0 h-[130vh] md:h-[147vh]">
       <div className='p-3 md:p-10'>
         <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}>OUR SERVICES</h1>
         <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold mt-5 ${inknutAntiqua.className}`}>WE PROVIDE BEST SERVICES</h1>
@@ -139,7 +139,7 @@ const Services = () => {
           </div>
 
         <div className=''>
-            <Image src={train} alt='train' className=' md:w-[550px] object-contain' />
+            <Image src={train} alt='train' className=' absolute md:right-[10px] md:w-[550px] object-contain' />
         </div>
 
         </div>

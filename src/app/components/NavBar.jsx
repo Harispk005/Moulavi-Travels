@@ -57,19 +57,19 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={handlhome}>Home</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => router.push('/About_us')}>About Us</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('services')}>Services</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold' onClick={() => router.push('/login')}>Login</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handlhome}>Home</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/About_us')}>About Us</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('services')}>Services</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/login')}>Login</button>
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded'onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
+                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer'onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
             </div>
 
             <div className='md:hidden flex items-center'>
-                <button className='text-[#FFBD05] hover:text-[#ffbc05cc] font-semibold' onClick={togglesidebar}>
+                <button className='text-[#FFBD05] hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={togglesidebar}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                     </svg>
@@ -84,7 +84,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -300 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="fixed top-0 left-0 w-full bg-[#F2EFE7] shadow-lg z-50 h-[350px] px-8 py-8 md:hidden"
+                        className="fixed top-0 left-0 w-full bg-[#F2EFE7] shadow-lg z-50 h-[350px] px-8 py-8 md:hidden "
                     >
                         <div className="relative flex justify-center items-center ">
                             <Image src={logo} alt='logo' width={100} height={100} className="cursor-pointer mb-4 w-[180px] h-[40px]" onClick={handlhome} />

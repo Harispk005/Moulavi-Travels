@@ -126,7 +126,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* <div className='h-[1px] w-full bg-[#371275] mt-8'></div> */}
+      <div className='w-full mt-8'></div>
     </div>
   );
 };

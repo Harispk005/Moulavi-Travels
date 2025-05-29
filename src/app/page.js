@@ -13,12 +13,15 @@ import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyCooseUs';
 import ServiceFlow from './components/ServiceFlow';
 
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true); // Ensures client-only rendering
     const startTime = Date.now();
-    const maxLoadingDuration = 7000; // max wait 5s
+    const maxLoadingDuration = 7000;
 
     const mediaElements = document.querySelectorAll('img.critical-media, video.critical-media');
     let loadedCount = 0;
@@ -27,13 +30,12 @@ export default function Home() {
       loadedCount++;
       if (loadedCount === mediaElements.length) {
         const elapsed = Date.now() - startTime;
-        const remaining = 1500 - elapsed; // min spinner 1.2s
+        const remaining = 1500 - elapsed;
         setTimeout(() => setLoading(false), remaining > 0 ? remaining : 0);
       }
     };
 
     if (mediaElements.length === 0) {
-      // No critical media — just wait min time
       setTimeout(() => setLoading(false), 1200);
       return;
     }
@@ -59,6 +61,8 @@ export default function Home() {
       });
     };
   }, []);
+
+  if (!isClient) return null; // Prevent server-side mismatch
 
   return (
     <div className="relative bg-[#FFBD05] min-h-screen">
