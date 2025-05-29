@@ -19,7 +19,7 @@ const Middleview = () => {
         />
       </div>
       <div className='flex flex-col justify-center items-center'>
-        <h1 className={`text-2xl md:text-[3xl] m-10 ${inknutAntiqua.className} text-[#371275]`}>About Moulavi Travels!</h1>
+        <h1 className={`text-2xl md:text-[30px] m-10 ${inknutAntiqua.className} text-[#371275]`}>About Moulavi Travels!</h1>
 
         <p className={`p-8 text-justify text-[#371275] ${inter.className}`}>
 
@@ -29,7 +29,7 @@ const Middleview = () => {
           We offer family-friendly tours that cater to all age groups, making it easy for families and those solo to explore our rich Islamic heritage and culture together. From the beauty and serene experience of the Kaaba and Masjid Nabawi to the stunning architecture of Masjid Al-Aqsa, our tours offer an opportunity to create memories that will last a lifetime and most importantly provide education by our qualified scholars throughout our Ziyarahs.
           Join us on a journey of self-discovery with Moulavi travels, where we’ll take care of all the details, and all you need to do is focus on is nourishing the soul and enjoying it together as a group. We look forward to serving you and making your dream of undertaking these Ziyarahs come true.”
         </p>
-
+    
       </div>
     </div>
   )
