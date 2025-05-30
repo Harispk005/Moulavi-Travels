@@ -5,8 +5,6 @@ import Image from 'next/image';
 import logo from '../Images/moulavilonglogo.png';
 
 import NavBar from '../components/NavBar';
-import Middleview from './Middleview';
-import Vision from './Vision';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -63,8 +61,6 @@ const Page = () => {
   return (
     <div className="relative bg-[#FFBD05] min-h-screen">
       <NavBar />
-      <Middleview />
-      <Vision />
       <Contact id="contact_about" />
       <Footer />
 

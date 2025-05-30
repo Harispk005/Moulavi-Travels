@@ -14,6 +14,7 @@ import bus from '../Images/image-removebg-preview (5) 1.png';
 import train from '../Images/train.png';
 import group from '../Images/Group 9.png';
 import { Inknut_Antiqua, Inter  } from 'next/font/google';
+import { useRouter } from 'next/navigation';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -35,6 +36,8 @@ const cardVariants = {
 const Services = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  const router=useRouter();
 
   useEffect(() => {
     if (inView) {
@@ -58,10 +61,12 @@ const Services = () => {
             initial="hidden"
             animate={controls}
             variants={cardVariants}
+            onClick={() => router.push('/Flight_ticket')}
           >
-            <Image src={plane} alt='airplane' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={plane} alt='airplane' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>FLIGHT TICKET</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Find Great deals on worldwide.</p>
+
           </motion.div>
 
           <motion.div
@@ -71,7 +76,7 @@ const Services = () => {
             animate={controls}
             variants={cardVariants}
           >
-            <Image src={hotel} alt='hotel' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={hotel} alt='hotel' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HOTELS</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Find your ideal accommodation, from luxury to budget.</p>
           </motion.div>
@@ -83,7 +88,7 @@ const Services = () => {
             animate={controls}
             variants={cardVariants}
           >
-            <Image src={beach} alt='beach' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={beach} alt='beach' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HOLIDAYS</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Experience the best, remember forever.</p>
           </motion.div>
@@ -95,7 +100,7 @@ const Services = () => {
             animate={controls}
             variants={cardVariants}
           >
-            <Image src={hajj} alt='kaaba' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={hajj} alt='kaaba' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HAJJ & UMRAH</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Travel with us for a meaningful Hajj and Umrah experience.</p>
           </motion.div>
@@ -107,7 +112,7 @@ const Services = () => {
             animate={controls}
             variants={cardVariants}
           >
-            <Image src={globe} alt='globe' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={globe} alt='globe' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>GLOBAL VISA</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Simplify your visa application process.</p>
           </motion.div>
@@ -119,7 +124,7 @@ const Services = () => {
             animate={controls}
             variants={cardVariants}
           >
-            <Image src={file} alt='file' className='w-15 h-15 md:w-20 m:h-20 ' />
+            <Image src={file} alt='file' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>ATTESTATION</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Fast and easy apostille services.</p>
           </motion.div>

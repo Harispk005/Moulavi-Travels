@@ -6,7 +6,8 @@ import logo from '../Images/moulavilonglogo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import mainlogo from '../Images/moulavi bg main.png';
 
-const NavBar = ({ bgColor = 'transparent' }) => {
+
+const NavBar = ({ bgColor = 'transparent'  }) => {
     const [sidebar, setSidebar] = useState(false);
 
     const router = useRouter();
@@ -25,6 +26,24 @@ const NavBar = ({ bgColor = 'transparent' }) => {
             router.push('/');
         }
     };
+
+    const handleabout = () => {
+        if (pathname === '/About_us') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            router.push('/About_us');
+        }
+    }
+
+    const handleservices = () => {
+        if (pathname === '/') {
+            handleScrollToSection('services');
+        } else if(pathname !== '/'){
+            router.push('/');
+            handleScrollToSection('services');
+        }
+    };
+
 
     const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
@@ -58,14 +77,14 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
             <div className='space-x-4 hidden md:flex'>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handlhome}>Home</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/About_us')}>About Us</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('services')}>Services</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handleabout}>About Us</button>
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handleservices}>Services</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/login')}>Login</button>
             </div>
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer'onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
+                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer' onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
             </div>
 
             <div className='md:hidden flex items-center'>
