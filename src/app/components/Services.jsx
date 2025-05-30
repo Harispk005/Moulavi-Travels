@@ -13,6 +13,7 @@ import file from '../Images/Documents.png';
 import bus from '../Images/image-removebg-preview (5) 1.png';
 import train from '../Images/train.png';
 import group from '../Images/Group 9.png';
+import arrow from '../Images/Circled Down Left Arrow.png';
 import { Inknut_Antiqua, Inter  } from 'next/font/google';
 import { useRouter } from 'next/navigation';
 
@@ -66,7 +67,7 @@ const Services = () => {
             <Image src={plane} alt='airplane' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>FLIGHT TICKET</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Find Great deals on worldwide.</p>
-
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div
@@ -79,6 +80,7 @@ const Services = () => {
             <Image src={hotel} alt='hotel' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HOTELS</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Find your ideal accommodation, from luxury to budget.</p>
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div
@@ -91,6 +93,7 @@ const Services = () => {
             <Image src={beach} alt='beach' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HOLIDAYS</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Experience the best, remember forever.</p>
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div
@@ -103,6 +106,7 @@ const Services = () => {
             <Image src={hajj} alt='kaaba' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>HAJJ & UMRAH</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Travel with us for a meaningful Hajj and Umrah experience.</p>
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div
@@ -115,6 +119,7 @@ const Services = () => {
             <Image src={globe} alt='globe' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>GLOBAL VISA</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Simplify your visa application process.</p>
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div
@@ -127,6 +132,7 @@ const Services = () => {
             <Image src={file} alt='file' className='w-15 h-15  m:h-20 ' />
             <h1 className='text-lg md:text-xl font-semibold mt-2'>ATTESTATION</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Fast and easy apostille services.</p>
+            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
         </div>
 
@@ -143,10 +149,7 @@ const Services = () => {
             <Image src={group} alt='group' className='object-cover w-[150px]' />
           </div>
 
-        <div className=''>
-            <Image src={train} alt='train' className=' absolute md:right-[10px] md:w-[550px] object-contain' />
-        </div>
-
+      
         </div>
       </div>
     </div>

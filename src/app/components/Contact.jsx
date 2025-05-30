@@ -112,16 +112,16 @@ const Contact = () => {
         <div className='flex justify-center gap-40 mt-[80px]'>
           <div>
             <h1 className={`text-[#371275] text-[18px] font-bold ${inter.className}`}>Services</h1>
-            <p className='mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>Holidays</p>
-            <p className='mt-2 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>Hotels</p>
-            <p className='mt-2 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>Flight Ticket</p>
-            <p className='mt-2 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>Hajj & Umrah</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Holidays</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Hotels</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Flight Ticket</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Hajj & Umrah</p>
           </div>
           <div>
             <h1 className={`text-[#371275] text-[18px] font-bold ${inter.className}`}>Quick links</h1>
-            <p className='mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>Contact Us</p>
-            <p className='mt-2 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>About Us</p>
-            <p className='mt-2 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200'>*Admin Login</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Contact Us</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>About Us</p>
+            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Admin Login <span className='text-red-500'>*</span></p>
           </div>
         </div>
       </div>

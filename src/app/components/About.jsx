@@ -33,7 +33,7 @@ const About = () => {
                 <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold mt-3 ${inknutAntiqua.className}`}>
                     TOP - NOTCH IMMIGRATION AND VISA CONSULTING
                 </h1>
-                <p className="text-[#371275] text-lg md:text-xl mt-3">
+                <p className={`text-[#371275] text-lg md:text-xl mt-3 ${inter.className}`}>
                     Expert guidance and personalized support for a seamless immigration journey
                 </p>
                 <div className="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
@@ -55,16 +55,16 @@ const About = () => {
                         <div className="flex gap-2 text-[#371275]">
                             <Image src={tick} alt="tick" className="h-8 w-8 object-cover md:mt-[10px]" />
                             <div className="md:ml-[10px]">
-                                <h1 className="text-xl font-normal">Manpower Solutions & Visa Services</h1>
-                                <h3>Expert manpower solutions and visa services for a global workforce.</h3>
+                                <h1 className={`text-xl font-normal ${inknutAntiqua.className}`}>Manpower Solutions & Visa Services</h1>
+                                <h3 className={`text-base ${inter.className}`}>Expert manpower solutions and visa services for a global workforce.</h3>
                             </div>
                         </div>
 
                         <div className="flex gap-2 text-[#371275]">
                             <Image src={tick} alt="tick" className="h-8 w-8 object-cover md:mt-[10px]" />
                             <div className="md:ml-[10px]">
-                                <h1 className="text-xl font-normal">Best Immigration Consultants</h1>
-                                <h3>Trusted immigration consultants for a stress-free experience.</h3>
+                                <h1 className={`text-xl font-normal ${inknutAntiqua.className}`}>Best Immigration Consultants</h1>
+                                <h3 className={`text-base ${inter.className}`}>Trusted immigration consultants for a stress-free experience.</h3>
                             </div>
                         </div>
 

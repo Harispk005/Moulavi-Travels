@@ -4,13 +4,16 @@ import tafi from '../Images/tafi1 new.png';
 import iaai from '../Images/iaai new.png';
 import tafi2 from '../Images/tafi2 new.png';
 import saudi from '../Images/saudi new.png';
-import iata from '../Images/iata new.png';
+import iata from '../Images/iata new.png';import { Inknut_Antiqua, Inter } from 'next/font/google';
 
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter({ weight: '600', subsets: ['latin'] });
 const Footer = () => {
   return (
     <div className='w-full'>
       <div className='bg-[#371275] w-full md:h-[280px] py-10'>
-        <h1 className='text-center text-[#FFBD05] text-[20px] font-[Inknut_Antiqua] py-3'>
+        <h1 className={`text-center text-[#FFBD05] text-[20px] md:text-[25px] py-3 ${inknutAntiqua.className}`}>
           Member Of
         </h1>
 
@@ -37,7 +40,7 @@ const Footer = () => {
       </div>
 
       <div className='w-full h-[40px] flex items-center justify-center'>
-        <p className='text-[#371275] font-medium text-[12px] md:text-[12px]'>
+        <p className={`text-[#371275] font-medium text-[12px] md:text-[15px] mt-2 ${inter.className}`}>
           Copyright © 2025 Moulavi Travells. All rights reserved
         </p>
       </div>

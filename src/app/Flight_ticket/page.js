@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import Image from 'next/image';
 import logo from '../Images/moulavilonglogo.png';
-
 import NavBar from '../components/NavBar';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import Flight_Middleview from './Flight_Middleview';
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -61,6 +61,7 @@ const Page = () => {
   return (
     <div className="relative bg-[#FFBD05] min-h-screen">
       <NavBar />
+      <Flight_Middleview/>
       <Contact id="contact_about" />
       <Footer />
 
