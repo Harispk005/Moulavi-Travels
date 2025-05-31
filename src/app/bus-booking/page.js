@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Image from 'next/image'
-import Flight from '../Images/flight.jpg'
+import Bus from '../Images/busbg.jpg'
 import tick from '../Images/tick.png';
 import busServiceImg from '../Images/bus-service-img.png';
 
@@ -98,7 +98,7 @@ const Page = () => {
             <div className='flex flex-col justify-center'>
                 <div className='relative w-full h-[70vh] md:h-screen overflow-hidden'>
                     <Image
-                        src={Flight}
+                        src={Bus}
                         priority
                         alt='Kaaba'
                         fill
