@@ -14,7 +14,7 @@ const inter = Inter({
 const Vision = () => {
   return (
     <>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center min-h-[80vh] md:min-h-screen p-2">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center min-h-[80vh] md:min-h-screen p-2">
         <div className="flex flex-col items-center w-[340px] md:w-[370px] h-[40vh] md:h-[55vh] bg-[#371275] rounded-xl p-4">
           <h2 className={`text-white font-semibold mt-3 md:mt-5 text-2xl md:text-3xl ${inknutAntiqua.className}`}>
             Our Vision
@@ -53,12 +53,51 @@ const Vision = () => {
             Jordan Visit Visa Renewal
           </button>
         </div>
+      </div> */}
+
+      <div className='grid grid-cols-1 md:grid-cols-2  gap-4 md:gap-6 md:py-12 px-4 max-w-6xl mx-auto'>
+        <div className='bg-[#371275] p-4 md:p-8  flex flex-col items-center  '>
+          <h2 className={`text-white font-semibold text-2xl md:text-3xl ${inknutAntiqua.className}`}>
+            Our Vision
+          </h2>
+          <ul className={`text-white text-sm md:text-base space-y-2 mt-4 ${inter.className} font-normal`}>
+            {[
+              "Pilgrimage to the 3 Holy sanctuaries.",
+              "Visit sacred sites around the world.",
+              "Educate and instill the love of our deen.",
+              "Provide family-friendly tours",
+              "Support you throughout your travels",
+              "Provide you with a Journey Of A Lifetime."
+            ].map((text, index) => (
+              <li key={index} className="flex items-start">
+                <svg className="w-4 h-4 mr-2 mt-[2px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='bg-[#371275] p-4 md:p-8  flex flex-col items-center '>
+          <h2 className={`text-white font-semibold  text-2xl md:text-3xl ${inknutAntiqua.className}`}>
+            Tours We Offer
+          </h2>
+          <button className='bg-transparent text-[#FFBD05] border-2 border-[#FFBD05] w-[300px] h-[50px] md:h-[60px] mt-7 hover:bg-[#FFBD05] hover:text-[#371275] transition-colors duration-300 font-semibold'>
+            Makkah Historical  Study Tour
+          </button>
+          <button className='bg-transparent text-[#FFBD05] border-2 border-[#FFBD05] w-[300px] h-[50px] md:h-[60px] mt-7 hover:bg-[#FFBD05] hover:text-[#371275] transition-colors duration-300 font-semibold'>
+            Taif Tour
+          </button>
+          <button className='bg-transparent text-[#FFBD05] border-2 border-[#FFBD05] w-[300px] h-[50px] md:h-[60px] mt-7 hover:bg-[#FFBD05] hover:text-[#371275] transition-colors duration-300 font-semibold'>
+            Jordan Visit Visa Renewal
+          </button>
+        </div>
       </div>
 
       <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0 h-screen bg-[#371275]">
         <div className='p-3 md:p-10'>
           <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-8 py-2  font-semibold ${inter.className}`}>OUR VISION</h1>
-          
+
 
           <div className="flex flex-col md:flex-row items-center  mt-10 gap-6">
             <Image
@@ -75,19 +114,19 @@ const Vision = () => {
             </div>
           </div>
 
-        </div>        
+        </div>
       </div>
 
-        <div className=" py-5  md:px-0 md:py-0 md:mt-0 h-screen bg-[#371275]">
+      <div className=" py-5  md:px-0 md:py-0 md:mt-0 h-screen bg-[#371275]">
         <div className='p-3 md:p-10 mt-10 md:mt-0'>
           <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-8 py-2  font-semibold ${inter.className}`}>OUR MISSION</h1>
-          
+
 
           <div className="flex flex-col md:flex-row items-center justify-end mt-10 gap-6">
-           <div className="bg-[#371275] md:p-6 rounded-xl w-[90%] md:w-full">
-            <h1 className={`text-white text-lg md:text-4xl font-semibold mt-5 ${inknutAntiqua.className}`}>Trusted Immigration and Visa Advice</h1>
-             <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-20 ${inter.className}`}>
-               At Moulavi Tours and Travels, our mission is to empower individuals to embark on their sacred dream journeys with unwavering confidence and spiritual fulfillment. We achieve this by continuously innovating our services and leveraging profound industry expertise to provide the most efficient, effective, and spiritually enriching Ziyara solutions. Ultimately, we strive to become a symbol of reliability and excellence, leaving a lasting positive impact on the lives of every pilgrim we serve.
+            <div className="bg-[#371275] md:p-6 rounded-xl w-[90%] md:w-full">
+              <h1 className={`text-white text-lg md:text-4xl font-semibold mt-5 ${inknutAntiqua.className}`}>Trusted Immigration and Visa Advice</h1>
+              <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-20 ${inter.className}`}>
+                At Moulavi Tours and Travels, our mission is to empower individuals to embark on their sacred dream journeys with unwavering confidence and spiritual fulfillment. We achieve this by continuously innovating our services and leveraging profound industry expertise to provide the most efficient, effective, and spiritually enriching Ziyara solutions. Ultimately, we strive to become a symbol of reliability and excellence, leaving a lasting positive impact on the lives of every pilgrim we serve.
               </p>
             </div>
             <Image
@@ -99,7 +138,7 @@ const Vision = () => {
 
         </div>
 
-        
+
       </div>
 
 

@@ -8,125 +8,119 @@ import newmail from '../Images/newmail.png';
 import phone from '../Images/newphone.png';
 import { Inknut_Antiqua, Inter } from 'next/font/google';
 
-
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ weight: '600', subsets: ['latin'] });
 
 const Contact = () => {
   return (
-    <div className="px-2 py-5 mt-3 md:px-0 md:py-0 md:mt-0">
-      {/* 1st grid */}
-      <div className='h-auto w-full md:grid md:grid-cols-2'>
-        <div className='flex flex-col items-center md:mr-[300px] md:mt-[30px]'>
+    <div className="px-4 py-8 max-w-7xl mx-auto">
+      {/* First grid */}
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='flex flex-col items-center md:items-start'>
           <Image src={logo} alt='logo' className='w-[300px] h-[60px] md:w-[350px] md:h-[70px]' />
-          <div className='mt-5 text-center w-full md:ml-[90px]'>
-            <p className={`text-[14px] md:text-[15px] font-medium w-full px-4 text-[#371275] text-justify ${inter.className}`}>
-              Expert guidance for visas and immigration - simplifying your journey.
-            </p>
-          </div>
+          <p className={`mt-5 text-center md:text-left text-sm md:text-base text-[#371275] ${inter.className}`}>
+            Expert guidance for visas and immigration - simplifying your journey.
+          </p>
 
-          <div className='mt-5 md:block hidden'>
-            <h1 className={`text-[#371275] text-[17px] font-bold md:ml-2 ${inter.className}`}>Social Media</h1>
+          <div className='mt-6 hidden md:block'>
+            <h1 className={`text-[#371275] text-[17px] font-bold ${inter.className}`}>Social Media</h1>
             <div className='flex gap-3 mt-3'>
-              <div className="w-[50px] h-[50px] border-3 border-[#371275] rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-110">
-                <Image src={facebook} alt="face" className="w-[30px] h-[30px]" />
-              </div>
-
-              <div className="w-[50px] h-[50px] border-3 border-[#371275] rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-110">
-                <Image src={instagram} alt="insta" className="w-[30px] h-[30px]" />
-              </div>
+              {[facebook, instagram].map((icon, i) => (
+                <div key={i} className="w-[50px] h-[50px] border border-[#371275] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                  <Image src={icon} alt="social-icon" className="w-[30px] h-[30px]" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* 2nd grid */}
-        <div className='items-center py-10'>
-          <h1 className="text-center text-[30px] md:text-center md:text-[35px] md:ml-0 mb-5 text-[#371275] font-bold font-['Inknut_Antiqua']">
+        <div className='flex flex-col items-center'>
+          <h1 className={`text-3xl md:text-4xl text-[#371275] font-bold mb-6 ${inknutAntiqua.className}`}>
             CONTACT US
           </h1>
-          <div className='flex flex-col items-center relative'>
-            <div className='relative w-[350px] md:w-[400px]'>
-              <Image
-                src={mail}
-                alt='mail'
-                className='absolute left-[20px] top-[37px] transform -translate-y-1/2 w-7 h-7 transition-transform duration-300 hover:scale-110'
-              />
-              <input
-                type='email'
-                placeholder=' Your email address'
-                className='w-full h-[70px] bg-white border-none rounded-[10px] pl-14 pr-4 text-gray-600 placeholder-gray-400'
-              />
-            </div>
-            <button className='bg-[#371275] text-[#FFBD05] w-[350px] md:w-[400px] h-[70px] mt-5 rounded-[10px] hover:bg-[#201728]'>
-              Subscribe
-            </button>
+          <div className='relative w-full max-w-[400px]'>
+            <Image
+              src={mail}
+              alt='mail'
+              className='absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 hover:scale-110 transition-transform'
+            />
+            <input
+              type='email'
+              placeholder='Your email address'
+              className='w-full h-[60px] bg-white rounded-lg pl-14 pr-4 text-gray-600 placeholder-gray-400 border border-gray-300'
+            />
           </div>
-
+          <button className='bg-[#371275] text-[#FFBD05] w-full max-w-[400px] h-[60px] mt-5 rounded-lg hover:bg-[#201728]'>
+            Subscribe
+          </button>
         </div>
       </div>
 
-      <div className='mb-5 md:hidden ml-[40px]'>
-        <h1 className={`text-[#371275] text-[17px] font-bold ml-2 ${inter.className}`}>Social Media</h1>
+      {/* Social icons mobile */}
+      <div className='mt-8 md:hidden'>
+        <h1 className={`text-[#371275] text-[17px] font-bold ${inter.className}`}>Social Media</h1>
         <div className='flex gap-3 mt-3'>
-          <div className="w-[50px] h-[50px] border-3 border-[#371275] rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-110">
-            <Image src={facebook} alt="face" className="w-[30px] h-[30px]" />
-          </div>
-
-          <div className="w-[50px] h-[50px] border-3 border-[#371275] rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-110">
-            <Image src={instagram} alt="insta" className="w-[30px] h-[30px]" />
-          </div>
+          {[facebook, instagram].map((icon, i) => (
+            <div key={i} className="w-[50px] h-[50px] border border-[#371275] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <Image src={icon} alt="social-icon" className="w-[30px] h-[30px]" />
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className='h-[1px] w-full bg-[#371275]'></div>
+      <div className='my-8 h-[1px] w-full bg-[#371275]'></div>
 
       {/* Contact info */}
-      <div className='h-auto w-full md:grid md:grid-cols-2'>
-        <div className='flex flex-col'>
-          <div className='mx-[30px] mt-[30px]'>
-            <h1 className={`text-[30px] text-[#371275] ${inknutAntiqua.className}`}>CONTACT INFO</h1>
-          </div>
-          <div className='flex mt-8 mx-8'>
-            <Image src={location} alt='loc' className='w-[35px] h-[35px] mt-[4px] transform transition-transform duration-300 hover:scale-110' />
-            <p className={`text-justify ml-[20px] text-[#371275] cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='flex flex-col gap-4'>
+          <h1 className={`text-[30px] text-[#371275] ${inknutAntiqua.className}`}>CONTACT INFO</h1>
+
+          <div className='flex items-start gap-4'>
+            <Image src={location} alt='loc' className='w-8 h-8 hover:scale-110 transition-transform' />
+            <p className={`text-[#371275] ${inter.className}`}>
               Near Tahweel Al Rajhi,<br />
               Sitteen St. Sharafiya - Jeddah -<br />
               Saudi Arabia
             </p>
           </div>
-          <div className='flex mt-1 mx-8'>
-            <Image src={phone} alt='phone' className='w-[35px] h-[35px]' />
-            <p className={`text-justify ml-[20px] mt-2 text-[#371275] cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>
+
+          <div className='flex items-start gap-4'>
+            <Image src={phone} alt='phone' className='w-8 h-8' />
+            <p className={`text-[#371275] ${inter.className}`}>
               +966552678666,<br />
-              +966533111487, +966504538927
+              +966533111487,<br />
+              +966504538927
             </p>
           </div>
-          <div className='flex mt-4 mx-8'>
-            <Image src={newmail} alt='mail' className='w-[35px] h-[35px]' />
-            <p className={`text-justify ml-[20px] mt-2 text-[#371275] cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>
+
+          <div className='flex items-start gap-4'>
+            <Image src={newmail} alt='mail' className='w-8 h-8' />
+            <p className={`text-[#371275] ${inter.className}`}>
               moulavitravels1959@gmail.com
             </p>
           </div>
         </div>
 
-        <div className='flex justify-center gap-40 mt-[80px]'>
+        {/* Services + Links */}
+        <div className='flex flex-col md:flex-row justify-between gap-10 md:gap-20'>
           <div>
-            <h1 className={`text-[#371275] text-[18px] font-bold ${inter.className}`}>Services</h1>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Holidays</p>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Hotels</p>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Flight Ticket</p>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Hajj & Umrah</p>
+            <h1 className={`text-[#371275] text-lg font-bold ${inter.className}`}>Services</h1>
+            {['Holidays', 'Hotels', 'Flight Ticket', 'Hajj & Umrah'].map((text, i) => (
+              <p key={i} className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>
+                {text}
+              </p>
+            ))}
           </div>
           <div>
-            <h1 className={`text-[#371275] text-[18px] font-bold ${inter.className}`}>Quick links</h1>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Contact Us</p>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>About Us</p>
-            <p className={`mt-3 text-[#371275] font-medium cursor-pointer hover:underline transition-all duration-200 ${inter.className}`}>Admin Login <span className='text-red-500'>*</span></p>
+            <h1 className={`text-[#371275] text-lg font-bold ${inter.className}`}>Quick Links</h1>
+            {['Contact Us', 'About Us', 'Admin Login'].map((text, i) => (
+              <p key={i} className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>
+                {text}{text === 'Admin Login' && <span className='text-red-500'> *</span>}
+              </p>
+            ))}
           </div>
         </div>
       </div>
-
-      <div className='w-full mt-8'></div>
     </div>
   );
 };

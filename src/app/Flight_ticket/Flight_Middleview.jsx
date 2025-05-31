@@ -6,7 +6,7 @@ import { Inknut_Antiqua, Inter } from 'next/font/google';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
-const inter = Inter({ weight: '600', subsets: ['latin'] });
+const inter = Inter({  subsets: ['latin'] });
 
 const Middleview = () => {
     return (
@@ -30,13 +30,27 @@ const Middleview = () => {
                     </p>
                 </div>
             </div>
-            <div className='flex flex-col md:flex-row justify-start p-5 md:p-10'>
+            {/* <div className='flex flex-col lg:flex-row justify-start p-5 md:p-10'>
                 <Image src={Kid} alt='kid ' className='md:w-[700px] md:h-[500px] rounded-2xl' />
                 <div className='flex flex-col p-3'>
                     <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] md:ml-[40px] ${inter.className}`}>OUR SERVICES</h1>
                     <p className={`p-2 md:p-10 text-justify mt-5 md:mt-20 text-[#371275] md:text-[17px] ${inter.className}`}>Travel Freely, Worry Less – Moulavi Travels is Here for You. Whether it’s a business trip, a family vacation, or a solo getaway, Moulavi Travels ensures your journey is smooth and hassle-free. With a trusted network of airlines and travel partners, we provide a wide range of flight options tailored to your needs and budget.
                         From economy to business class, short hauls to long-distance journeys — we’ve got it all. Just enter your destination and travel dates, and we’ll handle the rest.
 
+                        Booking your next flight is just a few clicks away. Start your journey with Moulavi Travels today.
+                    </p>
+                </div>
+            </div> */}
+
+            <div className='flex flex-col p-4 lg:flex-row lg:gap-8 lg:items-center max-w-7xl mx-auto lg:mt-10'>
+                <Image src={Kid} alt='kid ' className='rounded-lg md:h-80 object-cover w-full' />
+                <div className='flex flex-col mt-4'>
+                    <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550]  ${inter.className}`}>OUR SERVICES</h1>
+                    <p className={` text-justify mt-4 text-[#371275] md:text-[17px] ${inter.className}`}>Travel Freely, Worry Less – Moulavi Travels is Here for You. Whether it’s a business trip, a family vacation, or a solo getaway, Moulavi Travels ensures your journey is smooth and hassle-free. With a trusted network of airlines and travel partners, we provide a wide range of flight options tailored to your needs and budget.
+                        From economy to business class, short hauls to long-distance journeys — we’ve got it all. Just enter your destination and travel dates, and we’ll handle the rest.
+
+                    </p>
+                      <p className={` text-justify mt-4 text-[#371275] md:text-[17px] ${inter.className}`}>
                         Booking your next flight is just a few clicks away. Start your journey with Moulavi Travels today.
                     </p>
                 </div>
