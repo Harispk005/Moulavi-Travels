@@ -196,7 +196,7 @@ const Page = () => {
                             <br />
                             Book your flights with us today and feel the difference.
                         </p>
-                        <Image src={busServiceImg} alt="busServiceImg"  className="w-full lg:min-w-1/2 object-cover lg:h-[500px] lg:-mt-10" priority />
+                        <Image src={busServiceImg} alt="busServiceImg" className="w-full lg:min-w-1/2 object-cover lg:h-[500px] lg:-mt-10" priority />
                     </div>
                 </div>
             </div>
