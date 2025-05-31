@@ -91,9 +91,9 @@ const Services = () => {
             variants={cardVariants}
           >
             <Image src={beach} alt='beach' className='w-15 h-15  m:h-20 ' />
-            <h1 className='text-lg md:text-xl font-semibold mt-2'>HOLIDAYS</h1>
+            <h1 className='text-lg md:text-xl font-semibold mt-2'>BUS TICKET</h1>
             <p className='mt-2 md:text-lg md:font-medium'>Experience the best, remember forever.</p>
-            <button  onClick={() => router.push('/Flight_ticket')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
+            <button  onClick={() => router.push('/bus-booking')} className='mt-2 md:text-lg md:font-medium text-[#FFBD05] hover:text-white flex'>View More<span><svg className="w-4 h-4 ml-2 mt-1 md:mt-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg></span></button>
           </motion.div>
 
           <motion.div

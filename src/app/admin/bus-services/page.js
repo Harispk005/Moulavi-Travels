@@ -18,7 +18,7 @@ export default function BusServiceEditor() {
 
     const fetchServices = async (token) => {
         try {
-            const res = await axios.get("http://localhost:4000/bus-services", {
+            const res = await axios.get("https://moulavitravels-backend.onrender.com/bus-services", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setServices(res.data);
@@ -34,7 +34,7 @@ export default function BusServiceEditor() {
             return;
         }
 
-        axios.post("http://localhost:4000/verify-token", {}, {
+        axios.post("https://moulavitravels-backend.onrender.com/verify-token", {}, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(() => {
             setIsLoading(false);
@@ -50,7 +50,7 @@ export default function BusServiceEditor() {
         const token = localStorage.getItem("token");
         setIsSubmitting(true);
         try {
-            const res = await axios.post("http://localhost:4000/bus-services", newService, {
+            const res = await axios.post("https://moulavitravels-backend.onrender.com/bus-services", newService, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             // Refetch the entire updated list
@@ -73,24 +73,24 @@ export default function BusServiceEditor() {
         setEditedService({ title: '', desc: '' });
     };
 
-const handleSaveEdit = async (serviceId) => {
-  const token = localStorage.getItem("token");
-  if (!token) return;
-  setIsSubmitting(true);
-  try {
-    await axios.put(`http://localhost:4000/bus-services/${serviceId}`, editedService, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    // Refetch fresh list
-    await fetchServices(token);
-    setEditingServiceId(null);
-    setEditedService({ title: '', desc: '' });
-  } catch (err) {
-    alert(err.response?.data?.error || "Error updating bus service");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    const handleSaveEdit = async (serviceId) => {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+        setIsSubmitting(true);
+        try {
+            await axios.put(`https://moulavitravels-backend.onrender.com/bus-services/${serviceId}`, editedService, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            // Refetch fresh list
+            await fetchServices(token);
+            setEditingServiceId(null);
+            setEditedService({ title: '', desc: '' });
+        } catch (err) {
+            alert(err.response?.data?.error || "Error updating bus service");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
 
     const handleDelete = async (serviceId) => {
@@ -101,7 +101,7 @@ const handleSaveEdit = async (serviceId) => {
 
         setIsSubmitting(true);
         try {
-            await axios.delete(`http://localhost:4000/bus-services/${serviceId}`, {
+            await axios.delete(`https://moulavitravels-backend.onrender.com/bus-services/${serviceId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setServices((prev) => prev.filter((item) => item._id !== serviceId));

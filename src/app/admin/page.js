@@ -33,10 +33,12 @@ export default function Admin() {
   if (isLoading) return null;
 
   return (
-    <div className=" p-4 md:p-8 text-white bg-gray-900 min-h-screen">
+    <div className=" p-4 md:p-8 text-white bg-gray-900 min-h-screen flex flex-col gap-10">
       <h1 className="text-4xl font-bold mb-6">Welcome to Admin Page</h1>
-      <p></p>
       <a href="/admin/hero">Hero</a>
+      <a href="/admin/bus-services">Bus Service</a>
+      <a href="/admin/bus-timing">Bus Timing</a>
+
     </div>
   );
 }
