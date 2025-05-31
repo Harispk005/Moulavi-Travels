@@ -33,7 +33,7 @@ const Page = () => {
 
         const fetchServices = async () => {
             try {
-                const res = await axios.get("http://localhost:4000/bus-services");
+                const res = await axios.get("https://moulavitravels-backend.onrender.com/bus-services");
                 setServices(res.data);
             } catch (err) {
                 console.log("❌ Error fetching services:", err.message);
@@ -43,7 +43,7 @@ const Page = () => {
 
         const fetchTiming = async () => {
             try {
-                const res = await axios.get("http://localhost:4000/bus-timing");
+                const res = await axios.get("https://moulavitravels-backend.onrender.com/bus-timing");
                 setTiming(res.data);
                 console.log("Bus Timings:", res.data);
 
