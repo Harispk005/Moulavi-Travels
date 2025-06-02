@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import mainlogo from '../Images/moulavi bg main.png';
 
 
-const NavBar = ({ bgColor = 'transparent'  }) => {
+const NavBar = ({ bgColor = 'transparent' }) => {
     const [sidebar, setSidebar] = useState(false);
+    const [dropdown, setDropdown] = useState(false);
 
     const router = useRouter();
     const pathname = usePathname();
@@ -38,7 +39,7 @@ const NavBar = ({ bgColor = 'transparent'  }) => {
     const handleservices = () => {
         if (pathname === '/') {
             handleScrollToSection('services');
-        } else if(pathname !== '/'){
+        } else if (pathname !== '/') {
             router.push('/');
             handleScrollToSection('services');
         }
@@ -76,12 +77,41 @@ const NavBar = ({ bgColor = 'transparent'  }) => {
             </div>
 
             <div className='space-x-4 hidden md:flex'>
+
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handlhome}>Home</button>
+
                 <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handleabout}>About Us</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handleservices}>Services</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('contact')}>Contact Us</button>
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/login')}>Login</button>
+
+                {/* Services Dropdown */}
+                <div className='relative'>
+                    <button
+                        className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer'
+                        onClick={() => setDropdown(!dropdown)}
+                    >
+                        Services
+                    </button>
+                    {dropdown && (
+                        <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 px-5 py-5 z-50 w-[150px]'>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Flight Ticket</li>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Bus Ticket</li>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Hotels</li>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Hajj & Umrah</li>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Global Visa</li>
+                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Attestation</li>
+                        </ul>
+                    )}
+                </div>
+
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('contact')}>
+                    Contact Us
+                </button>
+
+                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/login')}>
+                    Login
+                </button>
+
             </div>
+
 
             <div className='space-x-4 hidden md:flex'>
                 <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer' onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>

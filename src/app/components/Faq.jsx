@@ -30,7 +30,7 @@ const Faq = () => {
                 <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 lg:mt-4'>
 
                     {/* Left Column: All Questions */}
-                    <div className='flex flex-col gap-4 w-full lg:w-1/2 md:mt-10'>
+                    <div className='flex flex-col gap-4 w-full lg:w-1/2 '>
                         {/* Question 1 */}
                         <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question1 ? 'h-[240px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion1(!Question1)}>
                             <div className='flex items-center justify-between gap-2'>
