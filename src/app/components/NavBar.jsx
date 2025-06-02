@@ -5,15 +5,24 @@ import { useEffect, useRef, useState } from 'react';
 import logo from '../Images/moulavilonglogo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import mainlogo from '../Images/moulavi bg main.png';
+import { Inknut_Antiqua, Inter, Poppins } from 'next/font/google';
+
+
+
+const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
+const inter = Inter({ weight: '600', subsets: ['latin'] });
+const poppins = Poppins({ weight: '600', subsets: ['latin'] });
 
 
 const NavBar = ({ bgColor = 'transparent' }) => {
     const [sidebar, setSidebar] = useState(false);
     const [dropdown, setDropdown] = useState(false);
+    const [active, setActive] = useState('');
 
     const router = useRouter();
     const pathname = usePathname();
     const sidebarRef = useRef(null);
+    const dropdownRef = useRef(null);
 
 
     const togglesidebar = () => {
@@ -69,6 +78,19 @@ const NavBar = ({ bgColor = 'transparent' }) => {
         };
     }, [sidebar]);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <div className='flex justify-between items-center text-black py-4 px-5 fixed top-0 left-0 right-0 z-50 backdrop-blur-sm h-[70px]' style={{ backgroundColor: bgColor }}>
@@ -78,35 +100,35 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
             <div className='space-x-4 hidden md:flex'>
 
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handlhome}>Home</button>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={handlhome}>Home</button>
 
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={handleabout}>About Us</button>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={handleabout}>About Us</button>
 
-                {/* Services Dropdown */}
-                <div className='relative'>
+
+                <div className='relative' ref={dropdownRef}>
                     <button
-                        className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer'
+                        className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`}
                         onClick={() => setDropdown(!dropdown)}
                     >
                         Services
                     </button>
                     {dropdown && (
-                        <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 px-5 py-5 z-50 w-[150px]'>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Flight Ticket</li>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Bus Ticket</li>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Hotels</li>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Hajj & Umrah</li>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Global Visa</li>
-                            <li className='hover:text-[#ffbc05cc] cursor-pointer'>Attestation</li>
+                        <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 z-50 w-[200px] justify-center items-center'>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Flight_ticket')} >Flight Ticket</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/bus-booking')}>Bus Ticket</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hotels')}>Hotels</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hajj&Umrah')}>Hajj & Umrah</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Global-Visa')}>Global Visa</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Attestation')}>Attestation</li>
                         </ul>
                     )}
                 </div>
 
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => handleScrollToSection('contact')}>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={() => handleScrollToSection('contact')}>
                     Contact Us
                 </button>
 
-                <button className='text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer' onClick={() => router.push('/login')}>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={() => router.push('/login')}>
                     Login
                 </button>
 
@@ -114,7 +136,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
 
             <div className='space-x-4 hidden md:flex'>
-                <button className='bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer' onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
+                <button className={`bg-[#FFBD05] text-[#371275] font-semibold px-4 py-2 rounded cursor-pointer hover:bg-[#ffbc05a2] ${inter.className}`} onClick={() => handleScrollToSection('contact-us')}>Contact Now</button>
             </div>
 
             <div className='md:hidden flex items-center'>

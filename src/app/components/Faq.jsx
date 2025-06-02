@@ -9,7 +9,7 @@ const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 const Faq = () => {
-    const [Question1, setQuestion1] = useState(false);
+    const [Question1, setQuestion1] = useState(true);
     const [Question2, setQuestion2] = useState(false);
     const [Question3, setQuestion3] = useState(false);
     const [Question4, setQuestion4] = useState(false);
@@ -32,7 +32,7 @@ const Faq = () => {
                     {/* Left Column: All Questions */}
                     <div className='flex flex-col gap-4 w-full lg:w-1/2 '>
                         {/* Question 1 */}
-                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question1 ? 'h-[240px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion1(!Question1)}>
+                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out cursor-pointer ${Question1 ? 'h-[240px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion1(!Question1)}>
                             <div className='flex items-center justify-between gap-2'>
                                 <h3 className={`text-[#FFBD05]  text-[15px] md:text-[17px] lg:text-[17px] font-bold ${inter.className}`}>
                                     How can I apply for a student visa?
@@ -49,7 +49,7 @@ const Faq = () => {
                         </div>
 
                         {/* Question 2 */}
-                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question2 ? 'h-[220px] md:h-[160px]' : 'h-[70px]'}`}onClick={() => setQuestion2(!Question2)}>
+                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out cursor-pointer ${Question2 ? 'h-[220px] md:h-[160px]' : 'h-[70px]'}`}onClick={() => setQuestion2(!Question2)}>
                             <div className='flex items-center justify-between gap-2'>
                                 <h3 className={`text-[#FFBD05]  text-[15px] md:text-[17px] lg:text-[17px] font-bold ${inter.className}`}>
                                     How long does it take for a Tourist visa to process?
@@ -66,7 +66,7 @@ const Faq = () => {
                         </div>
 
                         {/* Question 3 */}
-                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question3 ? 'h-[170px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion3(!Question3)}>
+                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out cursor-pointer ${Question3 ? 'h-[170px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion3(!Question3)}>
                             <div className='flex items-center justify-between gap-2'>
                                 <h3 className={`text-[#FFBD05]  text-[15px] md:text-[17px] lg:text-[17px] font-bold ${inter.className}`}>
                                     What is your cancellation policy?
@@ -83,7 +83,7 @@ const Faq = () => {
                         </div>
 
                         {/* Question 4 */}
-                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question4 ? 'h-[150px] md:h-[160px]' : 'h-[70px]'}`}onClick={() => setQuestion4(!Question4)}>
+                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out cursor-pointer ${Question4 ? 'h-[150px] md:h-[160px]' : 'h-[70px]'}`}onClick={() => setQuestion4(!Question4)}>
                             <div className='flex items-center justify-between gap-2'>
                                 <h3 className={`text-[#FFBD05]  text-[15px] md:text-[17px] lg:text-[17px] font-bold ${inter.className}`}>
                                     What documents do I need?
@@ -100,7 +100,7 @@ const Faq = () => {
                         </div>
 
                         {/* Question 5 */}
-                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out ${Question5 ? 'h-[200px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion5(!Question5)}>
+                        <div className={`bg-[#371275] border-2 border-[#FFBD05] p-4 rounded-lg transition-all duration-180 ease-in-out cursor-pointer ${Question5 ? 'h-[200px] md:h-[160px]' : 'h-[70px]'}`} onClick={() => setQuestion5(!Question5)}>
                             <div className='flex items-center justify-between gap-2'>
                                 <h3 className={`text-[#FFBD05] text-[15px] md:text-[17px] lg:text-[17px] font-bold ${inter.className}`}>
                                     What are the payment options available?

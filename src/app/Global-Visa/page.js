@@ -1,13 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
-import hotel from '../Images/hotelbg.jpg'
+import GlobalVisa from '../Images/globalvisa-bg.jpg';
 import tick from '../Images/tick.png';
 import { Inknut_Antiqua, Inter } from 'next/font/google';
 import WhyChooseUs2 from '../components/WhyChooseUs2';
-import StayWithUs from './StayWithUs';
 import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
+import VisaExperts from './VisaExperts';
+
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -21,27 +22,28 @@ const Page = () => {
             <div className='flex flex-col justify-center'>
                 <div className='relative w-full h-[60vh] md:h-screen overflow-hidden'>
                     <Image
-                        src={hotel}
+                        src={GlobalVisa}
                         priority
                         alt='Kaaba'
                         fill
                         className='object-cover'
                     />
-                    <div className='absolute inset-0 bg-[#371275] opacity-50 z-10'></div>
+                    <div className='absolute inset-0 bg-[#FFBD05] opacity-20 z-10'></div>
 
                     <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
                         <h1 className={`text-white text-2xl xl:text-5xl font-bold leading-snug ${inknutAntiqua.className}`}>
-                            Find Your Perfect Stay with Moulavi Travels
+                             Step Into a World of Possibilities
+
                         </h1>
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
-                            Enjoy comfortable stays and warm hospitality that make you feel at home, no matter where you travel.
+                            From guidance to the final destination, we make every part of your journey easy.
+
                         </p>
                         <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
                     </div>
                 </div>
 
-                {/* stay with us */}
-                <StayWithUs />
+                <VisaExperts/> 
 
                 <div className='bg-[#FFBD05]'>
                     <div className='flex flex-col p-4 py-10 lg:gap-8 max-w-7xl mx-auto w-full'>
@@ -142,7 +144,7 @@ const Page = () => {
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
-                <Faq/>
+                <Faq />
                 <Contact />
 
             </div>

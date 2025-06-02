@@ -12,6 +12,7 @@ import busServiceImg from '../Images/bus-service-img.png';
 
 import { Inknut_Antiqua, Inter } from 'next/font/google';
 import axios from 'axios';
+import WhatsappAndCall from '../components/WhatsappAndCall';
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
@@ -200,8 +201,7 @@ const Page = () => {
                     </div>
                 </div>
             </div>
-
-
+            <WhatsappAndCall/>
             <Contact id="contact_about" />
             <Footer />
 

@@ -10,7 +10,7 @@ const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 
-const WhyChooseUs2 = () => {
+const StayWithUs = () => {
   return (
     <div className='bg-[#371275] '>
         <div className='flex flex-col p-4 max-w-7xl mx-auto bg-[#371275]  w-full mt-4'>
@@ -18,13 +18,15 @@ const WhyChooseUs2 = () => {
                 <h2 className={`${inknutAntiqua.className} mt-4 text-2xl lg:text-3xl text-[#FFBD05] `}>Experience Ziyara with Comfort, Care, and Complete Peace of Mind – Only at Moulavi Travels.</h2>
                 <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 lg:mt-4'>
                     <p className=' text-justify mt-4 text-[#FFBD05] md:text-lg'>
-                      At Moulavi Travels, we bring you the perfect blend of comfort, convenience, and affordability. Whether you're planning a spiritual ziyara, a family trip, or a business visit, our wide selection of trusted hotel stays ensures there's something for every traveler. With a smooth booking process and accommodations across key destinations, finding your ideal stay is just a few clicks away. Let Moulavi Travels make your journey restful and memorable — wherever your path leads. 
+                      At Moulavi Travels, we bring you the perfect blend of comfort, convenience, and affordability.
+                      <br/><br/>
+                       Whether you're planning a spiritual ziyara, a family trip, or a business visit, our wide selection of trusted hotel stays ensures there's something for every traveler.<br/> With a smooth booking process and accommodations across key destinations, finding your ideal stay is just a few clicks away.<br/><br/> Let Moulavi Travels make your journey restful and memorable — wherever your path leads. 
                     </p>
-                    <Image src={hotelexp} alt="busServiceImg" className="w-full lg:min-w-1/2 object-cover lg:h-[500px] lg:-mt-10" priority />
+                    <Image src={hotelexp} alt="busServiceImg" className="w-full lg:min-w-1/2 object-cover lg:h-[500px] lg:-mt-10 rounded-lg" priority />
                 </div>
             </div>
     </div>
   )
 }
 
-export default WhyChooseUs2
+export default StayWithUs;

@@ -67,19 +67,19 @@ const Services = () => {
       image: hajj,
       title: 'HAJJ & UMRAH',
       text: 'Travel with us for a meaningful Hajj and Umrah experience.',
-      link: '/Flight_ticket',
+      link: '/Hajj&Umrah',
     },
     {
       image: globe,
       title: 'GLOBAL VISA',
       text: 'Simplify your visa application process.',
-      link: '/Flight_ticket',
+      link: '/Global-Visa',
     },
     {
       image: file,
       title: 'ATTESTATION',
       text: 'Fast and easy apostille services.',
-      link: '/Flight_ticket',
+      link: '/Attestation',
     },
   ];
 
