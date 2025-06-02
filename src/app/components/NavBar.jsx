@@ -5,13 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 import logo from '../Images/moulavilonglogo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import mainlogo from '../Images/moulavi bg main.png';
-import { Inknut_Antiqua, Inter, Poppins } from 'next/font/google';
+import { Inknut_Antiqua, Inter } from 'next/font/google';
 
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ weight: '600', subsets: ['latin'] });
-const poppins = Poppins({ weight: '600', subsets: ['latin'] });
+
 
 
 const NavBar = ({ bgColor = 'transparent' }) => {
@@ -100,14 +100,14 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
             <div className='space-x-4 hidden md:flex'>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={handlhome}>Home</button>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={handlhome}>Home</button>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={handleabout}>About Us</button>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={handleabout}>About Us</button>
 
 
                 <div className='relative' ref={dropdownRef}>
                     <button
-                        className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`}
+                        className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`}
                         onClick={() => setDropdown(!dropdown)}
                     >
                         Services
@@ -124,11 +124,11 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                     )}
                 </div>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={() => handleScrollToSection('contact')}>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={() => handleScrollToSection('contact')}>
                     Contact Us
                 </button>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${poppins.className}`} onClick={() => router.push('/login')}>
+                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={() => router.push('/login')}>
                     Login
                 </button>
 
