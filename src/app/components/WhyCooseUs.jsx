@@ -109,7 +109,7 @@ const WhyChoose = () => {
                             We are a trusted travel agent providing unforgettable travel experiences. With a team
                             of experts and a wide network, we ensure every detail of your perfect trip runs perfectly.
                         </h4>
-                        <button className="flex items-center gap-2 mt-2 text-white font-semibold">
+                        <button className="flex items-center gap-2 mt-2 text-white font-semibold" onClick={() => router.push('/About_us')}>
                             LEARN MORE <Image src={arrow} alt="Arrow" width={20} height={20} />
                         </button>
                     </div>
