@@ -37,7 +37,7 @@ const Page = () => {
 
                         </h1>
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
-                            We work with trusted authorities to officially attest your documents, ensuring they're valid and accepted worldwid
+                            We work with trusted authorities to officially attest your documents, ensuring they&apos;re valid and accepted worldwid
                         </p>
                         <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
                     </div>
