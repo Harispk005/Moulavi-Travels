@@ -27,13 +27,13 @@ const Middleview = () => {
                 <div className='absolute inset-0 bg-[#371275] opacity-50 z-10'></div>
 
                 <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
-                    <h1 className={`text-white text-2xl xl:text-5xl font-bold leading-snug ${inknutAntiqua.className}`}>
+                    <h1 className={`text-white text-2xl md:text-4xl font-semibold leading-snug ${inknutAntiqua.className}`}>
                         Best Flights. Best Deals
                     </h1>
                     <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                         From budget-friendly options to premium experiences, find the perfect flight to match your preferences and budget with Safiya.
                     </p>
-                    {/* <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a> */}
+                    <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
                 </div>
             </div>
 

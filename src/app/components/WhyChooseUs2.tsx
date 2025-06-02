@@ -13,7 +13,7 @@ const WhyChooseUs2 = () => {
   return (
     <>
       <div className='bg-[#371275] '>
-        <div className='flex flex-col p-4 max-w-7xl mx-auto bg-[#371275]  w-full mt-4'>
+        <div className='flex flex-col p-4 lg:pb-10 max-w-7xl mx-auto bg-[#371275]  w-full mt-4'>
           <h1 className={`text-[#371275] bg-[#FFBD05] md:text-xl border-3 border-[#FFBD05] w-fit px-4 md:px-8 py-2 font-[550] mb-4  ${inter.className}`}> CHOOSE WITH CONFIDENCE</h1>
           <h2 className={`${inknutAntiqua.className} mt-4 text-2xl lg:text-3xl text-[#FFBD05] `}>WHY CHOOSE MOULAVI?</h2>
           <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 lg:mt-4'>

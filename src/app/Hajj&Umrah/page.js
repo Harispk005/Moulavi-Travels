@@ -30,7 +30,7 @@ const Page = () => {
                     <div className='absolute inset-0 bg-[black] opacity-50 z-10'></div>
 
                     <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
-                        <h1 className={`text-white text-2xl xl:text-5xl font-bold leading-snug ${inknutAntiqua.className}`}>
+                        <h1 className={`text-white text-2xl md:text-4xl font-semibold leading-snug ${inknutAntiqua.className}`}>
                             Begin your sacred journey to the holy cities with Moulavi Travels.
                         </h1>
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>

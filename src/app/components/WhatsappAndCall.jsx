@@ -8,7 +8,7 @@ const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 
 const WhatsappAndCall = () => {
   return (
-     <div className='bg-[#FFBD05] p-4 max-w-7xl mx-auto w-full mt-4'>
+     <div className='bg-[#FFBD05] p-4 lg:pb-10 max-w-7xl mx-auto w-full mt-4'>
         <h2 className={`${inknutAntiqua.className} mt-4 text-2xl lg:text-3xl text-[#371275] `}>Your Path, Your Peace — Begin Your Spiritual Journey with Moulavi Travels.</h2>
         <p className=' text-justify mt-4 md:mt-8 text-[#371275] md:text-lg'>
           From spontaneous ziyara trips to long-planned spiritual journeys, Moulavi Travels offers the perfect flight options for every kind of traveler.
@@ -26,7 +26,6 @@ const WhatsappAndCall = () => {
             WhatsApp Now
           </button>
         </div>
-
       </div>
   )
 }

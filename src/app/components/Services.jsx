@@ -49,25 +49,25 @@ const Services = () => {
       image: plane,
       title: 'FLIGHT TICKET',
       text: 'Find Great deals on worldwide.',
-      link: '/Flight_ticket',
+      link: '/Flight-ticket',
+    },
+     {
+      image: beach,
+      title: 'BUS SERVICES',
+      text: 'Experience the best, remember forever.',
+      link: '/bus-service',
+    },
+     {
+      image: hajj,
+      title: 'HAJJ & UMRAH',
+      text: 'Travel with us for a meaningful Hajj and Umrah experience.',
+      link: '/Hajj&Umrah',
     },
     {
       image: hotel,
       title: 'HOTELS',
       text: 'Find your ideal accommodation, from luxury to budget.',
       link: '/Hotels',
-    },
-    {
-      image: beach,
-      title: 'BUS TICKET',
-      text: 'Experience the best, remember forever.',
-      link: '/bus-booking',
-    },
-    {
-      image: hajj,
-      title: 'HAJJ & UMRAH',
-      text: 'Travel with us for a meaningful Hajj and Umrah experience.',
-      link: '/Hajj&Umrah',
     },
     {
       image: globe,
@@ -84,7 +84,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-5 mt-3 md:px-0 md:py-0 md:mt-0  ">
+    <div className="py-5 mt-3 md:px-0 md:py-0 md:mt-0 lg:pb-10  ">
       <div className='p-3 md:p-10'>
         <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}>OUR SERVICES</h1>
         <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold mt-5 ${inknutAntiqua.className}`}>WE PROVIDE BEST SERVICES</h1>

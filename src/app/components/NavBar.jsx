@@ -100,22 +100,22 @@ const NavBar = ({ bgColor = 'transparent' }) => {
 
             <div className='space-x-4 hidden md:flex'>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={handlhome}>Home</button>
+                <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={handlhome}>Home</button>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={handleabout}>About Us</button>
+                <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={handleabout}>About Us</button>
 
 
                 <div className='relative' ref={dropdownRef}>
                     <button
-                        className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`}
+                        className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`}
                         onClick={() => setDropdown(!dropdown)}
                     >
                         Services
                     </button>
                     {dropdown && (
                         <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 z-50 w-[200px] justify-center items-center'>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Flight_ticket')} >Flight Ticket</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/bus-booking')}>Bus Ticket</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Flight-ticket')} >Flight Ticket</li>
+                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/bus-service')}>Bus Ticket</li>
                             <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hotels')}>Hotels</li>
                             <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hajj&Umrah')}>Hajj & Umrah</li>
                             <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Global-Visa')}>Global Visa</li>
@@ -124,11 +124,11 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                     )}
                 </div>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={() => handleScrollToSection('contact')}>
+                <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={() => handleScrollToSection('contact')}>
                     Contact Us
                 </button>
 
-                <button className={`text-white hover:text-[#ffbc05cc] font-semibold cursor-pointer ${inter.className}`} onClick={() => router.push('/login')}>
+                <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={() => router.push('/login')}>
                     Login
                 </button>
 
