@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhyChooseUs from './components/WhyCooseUs';
 import ServiceFlow from './components/ServiceFlow';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 export default function Home() {

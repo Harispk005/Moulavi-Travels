@@ -3,7 +3,7 @@ import Image from 'next/image'
 import hotel from '../Images/hotelbg.jpg'
 import tick from '../Images/tick.png';
 import { Inknut_Antiqua, Inter } from 'next/font/google';
-import WhyChooseUs2 from '../Flight_ticket/WhyChooseUs2';
+import WhyChooseUs2 from '../components/WhyChooseUs2';
 import StayWithUs from './StayWithUs';
 import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
@@ -16,7 +16,7 @@ const Page = () => {
 
     return (
         <div className='bg-[#FFBD05]'>
-            <NavBar/>
+            <NavBar />
             <div className='flex flex-col justify-center'>
                 <div className='relative w-full h-[60vh] md:h-screen overflow-hidden'>
                     <Image

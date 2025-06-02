@@ -6,7 +6,7 @@ import tick from '../Images/tick.png';
 import busServiceImg from '../Images/bus-service-img.png';
 
 import { Inknut_Antiqua, Inter } from 'next/font/google';
-import WhyChooseUs2 from './WhyChooseUs2';
+import WhyChooseUs2 from '../components/WhyChooseUs2';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -26,17 +26,17 @@ const Middleview = () => {
                 />
                 <div className='absolute inset-0 bg-[#371275] opacity-50 z-10'></div>
 
-                 <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
-                        <h1 className={`text-white text-2xl xl:text-5xl font-bold leading-snug ${inknutAntiqua.className}`}>
-                            Best Flights. Best Deals
-                        </h1>
-                        <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
-                           From budget-friendly options to premium experiences, find the perfect flight to match your preferences and budget with Safiya.
-                        </p>
-                        {/* <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a> */}
-                    </div>
+                <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
+                    <h1 className={`text-white text-2xl xl:text-5xl font-bold leading-snug ${inknutAntiqua.className}`}>
+                        Best Flights. Best Deals
+                    </h1>
+                    <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
+                        From budget-friendly options to premium experiences, find the perfect flight to match your preferences and budget with Safiya.
+                    </p>
+                    {/* <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a> */}
+                </div>
             </div>
-          
+
             <div className='flex flex-col p-4 py-10 lg:gap-8 max-w-7xl mx-auto w-full'>
                 <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550]  ${inter.className}`}>OUR SERVICES</h1>
             </div>

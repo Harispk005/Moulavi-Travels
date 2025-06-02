@@ -7,6 +7,7 @@ import NavBar from '../components/NavBar';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Flight_Middleview from './Flight_Middleview';
+import Faq from '../components/Faq';
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -62,6 +63,7 @@ const Page = () => {
     <div className="relative bg-[#FFBD05] min-h-screen">
       <NavBar />
       <Flight_Middleview/>
+      <Faq/>
       <Contact id="contact_about" />
       <Footer />
 
