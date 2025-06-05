@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import img1 from '../Images/gallery1.jpg';
-import img2 from '../Images/gallery2.jpg';
-import img3 from '../Images/Group 37.jpg';
-import img4 from '../Images/passport.jpg';
-import img5 from '../Images/newbg.jpg';
-import img6 from '../Images/Hotel.png';
+import img1 from '../Images/im1.jpg';
+import img2 from '../Images/im2.jpg';
+import img3 from '../Images/im3.jpg';
+import img4 from '../Images/im4.jpg';
+import img5 from '../Images/im5.jpg';
+import img6 from '../Images/im6.jpg';
 
 const images = [img1, img2, img3, img4, img5, img6];
 
