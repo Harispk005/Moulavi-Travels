@@ -17,7 +17,7 @@ const Faq = () => {
 
     return (
         <div className='bg-[#371275] py-15' >
-            <div className='flex flex-col p-4 py-10 lg:gap-8 max-w-7xl mx-auto w-full'>
+            <div className='flex flex-col p-4 pt-10 lg:gap-8 max-w-7xl mx-auto w-full'>
                 <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-4 md:px-8 py-2 font-[550] ${inter.className}`}>
                     FREQUENTLY ASKED QUESTIONS (FAQS)
                 </h1>

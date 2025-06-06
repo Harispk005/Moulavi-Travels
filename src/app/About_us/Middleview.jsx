@@ -29,9 +29,9 @@ const Middleview = () => {
         </div>
       </div>
       <div className='flex flex-col justify-center items-center'>
-        <h1 className={`text-2xl md:text-[30px] mt-10 ${inknutAntiqua.className} text-[#371275]`}>About Moulavi Travels!</h1>
+        <h1 className={`text-2xl md:text-[30px] mt-5 mb-4 md:mt-10 ${inknutAntiqua.className} text-[#371275]`}>About Moulavi Travels!</h1>
 
-        <p className={`p-8 text-justify text-[#371275] ${inter.className} max-w-7xl`}>
+        <p className={`p-3 md:p-8 text-justify text-[#371275] ${inter.className} max-w-7xl`}>
 
           Assalamu Alaikum, welcome to Moulavi Tours an Islamic travel agency with the goal of providing all travelers with a Journey Of A Lifetime. Our focus extends not just to provide you with a physical journey to great Islamic sites around the world but also to provide a spiritually uplifting journey full of amazing Ziyarats, educational talks, and an extensive range of media to make your experience that will benefit you in this world and the Akhira, Insha’Allah.
           At Moulavi Travels, we understand the importance of these spiritual journeys for families and strive to make each one as memorable and fun-filled as possible. Our team and scholars have years of experience in arranging tours to Islamic destinations and will work with you to ensure that your travel plans meet your specific needs and preferences to ensure you have A Journey Of A Lifetime.

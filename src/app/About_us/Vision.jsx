@@ -94,54 +94,48 @@ const Vision = () => {
         </div>
       </div>
 
-      <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0 h-screen bg-[#371275]">
-        <div className='p-3 md:p-10'>
+      <div className=" py-5 mt-3 md:px-0 md:py-0 md:mt-0 bg-[#371275] ">
+        <div className='p-3 md:p-10 max-w-7xl mx-auto'>
           <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-8 py-2  font-semibold ${inter.className}`}>OUR VISION</h1>
 
 
-          <div className="flex flex-col md:flex-row items-center  mt-10 gap-6">
+          <div className="flex flex-col-reverse md:flex-row  mt-8 gap-6 ">
             <Image
               src={vision}
               alt="Vision Image"
-              className="w-[350px] md:w-[500px] h-auto rounded-lg"
+              className="w-[350px] md:w-[500px] max-h-[400px] h-auto rounded-lg object-cover"
             />
 
-            <div className="bg-[#371275] md:p-6 rounded-xl w-[90%] md:w-full">
-              <h1 className={`text-[white] text-lg md:text-4xl font-semibold mt-5 ${inknutAntiqua.className}`}>Services Beyond Commitments</h1>
-              <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-20 ${inter.className}`}>
+            <div className="bg-[#371275] md:p-6 rounded-xl md:w-full">
+              <h1 className={`text-[white] text-lg md:text-4xl font-semibold  ${inknutAntiqua.className}`}>Services Beyond Commitments</h1>
+              <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-5 md:mt-10 ${inter.className}`}>
                 At Moulavi Tours and Travels, our profound vision extends beyond mere travel; we aspire to be the guiding light for spiritual journeys. We envision a world where every pilgrim can embark on their sacred Ziyara with absolute peace of mind, deeply connected to their faith, and enriched by authentic experiences. Our commitment is to meticulously craft every itinerary, ensuring comfort, safety, and profound spiritual fulfillment. We leverage our deep understanding of the holy sites and the wisdom of our expert guides to transform travel into a truly transformative pilgrimage. Ultimately, we aim to be the most trusted name, leaving an indelible spiritual mark on the lives of every traveler we are blessed to serve.
               </p>
             </div>
           </div>
 
         </div>
-      </div>
-
-      <div className=" py-5  md:px-0 md:py-0 md:mt-0 h-screen bg-[#371275]">
-        <div className='p-3 md:p-10 mt-10 md:mt-0'>
+        <div className='p-3 md:p-10 max-w-7xl mx-auto'>
           <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-8 py-2  font-semibold ${inter.className}`}>OUR MISSION</h1>
 
 
-          <div className="flex flex-col md:flex-row items-center justify-end mt-10 gap-6">
-            <div className="bg-[#371275] md:p-6 rounded-xl w-[90%] md:w-full">
-              <h1 className={`text-white text-lg md:text-4xl font-semibold mt-5 ${inknutAntiqua.className}`}>Trusted Immigration and Visa Advice</h1>
-              <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-20 ${inter.className}`}>
+          <div className="flex flex-col md:flex-row  gap-6 ">
+
+            <div className="bg-[#371275] md:p-6 rounded-xl  md:w-full">
+              <h1 className={`text-[white] text-lg md:text-4xl font-semibold mt-5 ${inknutAntiqua.className}`}>Trusted Immigration and Visa Advice</h1>
+              <p className={`text-[#FFBD05] text-sm md:text-lg text-justify font-semibold mt-5 md:mt-10 ${inter.className}`}>
                 At Moulavi Tours and Travels, our mission is to empower individuals to embark on their sacred dream journeys with unwavering confidence and spiritual fulfillment. We achieve this by continuously innovating our services and leveraging profound industry expertise to provide the most efficient, effective, and spiritually enriching Ziyara solutions. Ultimately, we strive to become a symbol of reliability and excellence, leaving a lasting positive impact on the lives of every pilgrim we serve.
               </p>
             </div>
             <Image
               src={mission}
-              alt="Vision Image"
-              className="w-[350px] md:w-[500px] h-auto rounded-lg"
+              alt="Mission Image"
+              className="w-[350px] md:w-[500px] max-h-[400px] h-auto rounded-lg object-cover"
             />
           </div>
 
         </div>
-
-
       </div>
-
-
 
     </>
   );

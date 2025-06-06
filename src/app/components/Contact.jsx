@@ -86,18 +86,23 @@ const Contact = () => {
 
           <div className='flex items-start gap-4'>
             <Image src={phone} alt='phone' className='w-8 h-8' />
-            <p className={`text-[#371275] ${inter.className}`}>
-              +966552678666,<br />
-              +966533111487,<br />
-              +966504538927
-            </p>
+            <div className='flex flex-col gap-2'>
+              <a href='tel:+966552678666' className={`text-[#371275] ${inter.className}`}>
+                +966552678666
+              </a>
+              <a href='tel:+966533111487' className={`text-[#371275] ${inter.className}`}>+966533111487</a>
+
+              <a href="tel:+966504538927" className={`text-[#371275] ${inter.className}`}>+966504538927</a>
+
+            </div>
+
           </div>
 
           <div className='flex items-start gap-4'>
             <Image src={newmail} alt='mail' className='w-8 h-8' />
-            <p className={`text-[#371275] ${inter.className}`}>
+            <a href="mailto:moulavitravels1959@gmail.com" className={`text-[#371275] ${inter.className}`}>
               moulavitravels1959@gmail.com
-            </p>
+            </a>
           </div>
         </div>
 
@@ -113,11 +118,12 @@ const Contact = () => {
           </div>
           <div>
             <h1 className={`text-[#371275] text-lg font-bold ${inter.className}`}>Quick Links</h1>
-            {['Contact Us', 'About Us', 'Admin Login'].map((text, i) => (
-              <p key={i} className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>
-                {text}{text === 'Admin Login' && <span className='text-red-500'> *</span>}
-              </p>
-            ))}
+           
+            <div className='flex flex-col '>
+              <a href="/Contact-Us" className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>Contact Us</a>
+              <a href="/About_us" className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>About Us</a>
+              <a href="/login" className={`mt-2 text-[#371275] font-medium hover:underline cursor-pointer ${inter.className}`}>Admin Login <span className='text-red-500'> *</span> </a>
+            </div>
           </div>
         </div>
       </div>

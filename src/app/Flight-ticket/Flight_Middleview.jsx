@@ -40,15 +40,15 @@ const Middleview = () => {
             <div className='flex flex-col p-4 py-10 lg:gap-8 max-w-7xl mx-auto w-full'>
                 <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550]  ${inter.className}`}>OUR SERVICES</h1>
             </div>
-            <div className='flex flex-col p-4 lg:flex-row lg:gap-8 lg:items-center max-w-7xl mx-auto lg:mt-10'>
-                <Image src={Kid} alt='kid ' className='rounded-lg md:h-80 object-cover w-full' />
-                <div className='flex flex-col mt-4'>
+            <div className='flex flex-col p-4 lg:flex-row lg:gap-8  max-w-7xl mx-auto'>
+                <Image src={Kid} alt='kid ' className='rounded-lg md:h-[300px] object-cover w-full' />
+                <div className='flex flex-col mt-4 gap-4'>
 
-                    <p className={` text-justify mt-4 text-[#371275] md:text-[17px] ${inter.className}`}>Travel Freely, Worry Less – Moulavi Travels is Here for You. Whether it’s a business trip, a family vacation, or a solo getaway, Moulavi Travels ensures your journey is smooth and hassle-free. With a trusted network of airlines and travel partners, we provide a wide range of flight options tailored to your needs and budget.
-                        From economy to business class, short hauls to long-distance journeys — we’ve got it all. Just enter your destination and travel dates, and we’ll handle the rest.
+                    <p className={` text-justify  text-[#371275] md:text-[17px] ${inter.className}`}>Travel Freely, Worry Less – Moulavi Travels is Here for You. Whether it’s a business trip, a family vacation, or a solo getaway, Moulavi Travels ensures your journey is smooth and hassle-free. <br /> With a trusted network of airlines and travel partners, we provide a wide range of flight options tailored to your needs and budget.
+                       <br /> From economy to business class, short hauls to long-distance journeys — we’ve got it all. <br /> Just enter your destination and travel dates, and we’ll handle the rest.
 
                     </p>
-                    <p className={` text-justify mt-4 text-[#371275] md:text-[17px] ${inter.className}`}>
+                    <p className={` text-justify  text-[#371275] md:text-[17px] ${inter.className}`}>
                         Booking your next flight is just a few clicks away. Start your journey with Moulavi Travels today.
                     </p>
                 </div>

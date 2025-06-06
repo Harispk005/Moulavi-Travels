@@ -33,7 +33,7 @@ const WhyChoose = () => {
             />
             <div className='absolute inset-0 bg-[#371275] opacity-50 z-10'></div>
             {/* Overlay Content */}
-            <div className="relative z-10 p-3 md:p-10 flex flex-col items-start">
+            <div className="relative z-10  md:p-10 flex flex-col items-start">
                 <motion.h1
                     variants={textVariants}
                     initial="hidden"
@@ -53,13 +53,13 @@ const WhyChoose = () => {
 
 
                 <div className='flex flex-col md:flex-row items-center justify-between mt-5 gap-5'>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 p-5 max-w-screen-lg ">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 py-5 max-w-screen-lg ">
                         <motion.div
                             variants={textVariants}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center w-full max-w-[300px] ${inter.className}`}
+                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center  ${inter.className}`}
                         >
                             Expert Spiritual Guidance
                         </motion.div>
@@ -69,7 +69,7 @@ const WhyChoose = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center w-full max-w-[300px] ${inter.className}`}
+                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center  ${inter.className}`}
                         >
                             Comfortable Accommodations
                         </motion.div>
@@ -79,7 +79,7 @@ const WhyChoose = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center w-full max-w-[300px] ${inter.className}`}
+                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center  ${inter.className}`}
                         >
                             Seamless Travel Planning
                         </motion.div>
@@ -89,7 +89,7 @@ const WhyChoose = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center w-full max-w-[300px] col-span-1 ${inter.className}`}
+                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center  col-span-1 ${inter.className}`}
                         >
                             24/7 Support Team
                         </motion.div>
@@ -99,7 +99,7 @@ const WhyChoose = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center w-full max-w-[300px] col-span-1 ${inter.className}`}
+                            className={`text-[#371275] bg-[#FFBD05] px-5 py-4 font-semibold text-sm md:text-base text-center  col-span-1 ${inter.className}`}
                         >
                             Guided Religious Tours
                         </motion.div>

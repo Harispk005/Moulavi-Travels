@@ -113,13 +113,13 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                         Services
                     </button>
                     {dropdown && (
-                        <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 z-50 w-[200px] justify-center items-center'>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Flight-ticket')} >Flight Ticket</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/bus-service')}>Bus Ticket</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hotels')}>Hotels</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Hajj&Umrah')}>Hajj & Umrah</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Global-Visa')}>Global Visa</li>
-                            <li className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} onClick={()=>router.push('/Attestation')}>Attestation</li>
+                        <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 z-50 w-[200px] flex flex-col'>
+                            <a href="/Flight-ticket" className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}  >Flight Ticket</a>
+                            <a href='/bus-service' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} >Bus Ticket</a>
+                            <a href='/Hotels' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}>Hotels</a>
+                            <a href='/Hajj&Umrah' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} >Hajj & Umrah</a>
+                            <a href='/Global-Visa' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}>Global Visa</a>
+                            <a href='/Attestation' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}>Attestation</a>
                         </ul>
                     )}
                 </div>
