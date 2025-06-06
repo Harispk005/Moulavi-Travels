@@ -19,7 +19,7 @@ const AutoGallery = () => {
         <div className="w-full overflow-hidden bg-transparent py-10">
             <motion.div
                 className="flex gap-3"
-                animate={{ x: ['0%', '-30%'] }}
+                animate={{ x: ['0%', '-100%'] }}
                 transition={{
                     repeat: Infinity,
                     repeatType: 'loop',
