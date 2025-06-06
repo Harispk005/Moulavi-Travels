@@ -22,7 +22,7 @@ const ContactNow = () => {
 
             <div className="md:grid grid-cols-1 md:grid-cols-2">
                 <div>
-                    <div className="flex items-center gap-2 px-8 md:px-0 md:ml-60 md:mt-7">
+                    <div className="flex items-center gap-2 px-8 md:px-8 lg:ml-60 md:mt-7">
                         <label htmlFor="name" className="text-[#371275] font-semibold">
                             Name*
                         </label>
@@ -38,7 +38,7 @@ const ContactNow = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='pr-8'>
                     <div className="flex items-center gap-2 px-8 mt-8 md:px-0 md:ml-10">
                         <label htmlFor="mobile" className="text-[#371275] font-semibold">
                             Mobile

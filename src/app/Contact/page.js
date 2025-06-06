@@ -8,8 +8,13 @@ import { motion } from 'framer-motion';
 import phone from '../Images/newphone.png';
 import newmail from '../Images/newmail.png';
 import WhatsApp from '../Images/WhatsApp.png';
+import DeliveryTime from '../Images/Delivery Time.png';
+import Address from '../Images/Address.png';
 
 import { Inknut_Antiqua, Inter } from 'next/font/google';
+import ContactNow from '../components/ContactNow'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,7 +45,7 @@ const page = () => {
                     {/* <div className='absolute inset-0 bg-[#FFBD05] opacity-20 z-10'></div> */}
 
                     <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10 ' >
-                        <div className='bg-[#FFBD05] px-10 py-5 w-fit rounded-lg '>
+                        <div className='bg-[#FFBD05] px-5 md:px-10 py-5 w-fit rounded-lg '>
                             <h1 className={`text-[#371275] text-2xl md:text-4xl  font-semibold leading-snug ${inknutAntiqua.className}`}>
                                 Connect with Moulavi Tours & Travels
 
@@ -61,7 +66,7 @@ const page = () => {
                     <h1 className={`text-[#FFBD05] text-lg md:text-3xl font-semibold my-5 ${inknutAntiqua.className}`}>We&apos;re Here to Assist You</h1>
                     <p className='text-white md:text-xl'>Ready to embark on your spiritual journey? Our dedicated team is available to answer your questions, provide guidance, and help you plan the perfect Ziyara pilgrimage experience.</p>
 
-                    <div className='flex flex-wrap justify-center items-center gap-6 mt-10'>
+                    <div className='flex flex-wrap justify-center items-center md:gap-6 mt-10'>
 
                         <motion.div
                             custom={0}
@@ -141,15 +146,43 @@ const page = () => {
                     </div>
                 </div>
             </div>
-             <div className=" bg-[#FFBD05] py-5 mt-3 md:px-0 md:py-0 md:mt-0">
+            <div className=" bg-[#FFBD05] py-5 mt-3 md:px-0 md:py-0 md:mt-0">
                 <div className='p-3 md:p-10  max-w-7xl mx-auto'>
                     <h1 className={`text-[#371275] md:text-xl border-3 bg-[#FFBD05] w-fit px-8 py-2 font-[550] ${inter.className}`}>OFFICE LOCATION</h1>
                     <h1 className={`text-[#371275] text-lg md:text-3xl font-semibold my-5 ${inknutAntiqua.className}`}>Our Office Location</h1>
                     <p className='text-[#371275] md:text-xl'>Visit us at our convenient location in the heart of Thrissur. Our experienced team is ready to meet with you personally to discuss your pilgrimage plans.</p>
 
-                  
+                    <div className='w-full border-3 p-4 md:p-10 mt-8 border-[#371275] border-solid rounded-lg flex flex-col gap-8'>
+                        <div>
+                            <div className='flex gap-4 items-center'  >
+                                <Image src={Address} alt='Address' className='w-10 h-10' />
+
+                                <h2 className={`${inter.className} text-[#371275] md:text-xl font-bold`}>Address</h2>
+
+                            </div>
+                            <h3 className='text-[#371275] md:text-lg mt-4'>Near Tahweel, 2066 King Fahd Br Rd, 2066, Al Baghdadiyah Ash Sharqiyah District, 7971, Jeddah 22241, Saudi Arabia</h3>
+
+                        </div>
+                        <div>
+                            <div className='flex gap-4 items-center'  >
+                                <Image src={DeliveryTime} alt='delivaryTime' className='w-10 h-10' />
+
+                                <h2 className={`${inter.className} text-[#371275] md:text-xl font-bold`}>Office Hours</h2>
+
+                            </div>
+                            <h3 className='text-[#371275] md:text-lg mt-4'>
+                                Monday - Thursday: 9:30 AM - 11:00 PM<br />
+                                Friday : 4:30 PM - 11:00 PM <br />
+                                Saturday & Sunday : 9:30 AM - 11:00 PM
+                            </h3>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+            <ContactNow />
+            <Contact />
+            <Footer />
         </div>
     )
 }
