@@ -124,9 +124,9 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                     )}
                 </div>
 
-                <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={() => handleScrollToSection('contact')}>
+                <a href='/Contact' className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} >
                     Contact Us
-                </button>
+                </a>
 
                 <button className={`text-white hover:text-[black] font-semibold cursor-pointer ${inter.className}`} onClick={() => router.push('/login')}>
                     Login
@@ -168,7 +168,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                             <li onClick={handlhome} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Home</li>
                             <li onClick={() => router.push('/About_us')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">About Us</li>
                             <li onClick={() => { handleScrollToSection('services'); setSidebar(false); }} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Services</li>
-                            <li onClick={() => { handleScrollToSection('contact'); setSidebar(false); }} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</li>
+                            <a href='/Contact' className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Contact Us</a>
                             <li onClick={() => router.push('/login')} className="text-black hover:text-[#ffbc05cc] font-semibold cursor-pointer">Login</li>
                         </ul>
                     </motion.div>
