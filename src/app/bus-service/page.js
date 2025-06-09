@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Bus from '../Images/busbg.jpg'
 import tick from '../Images/tick.png';
 import busServiceImg from '../Images/bus-service-img.png';
-
+import { motion } from 'framer-motion';
 import { Inknut_Antiqua, Inter } from 'next/font/google';
 import axios from 'axios';
 import WhatsappAndCall from '../components/WhatsappAndCall';
@@ -18,6 +18,23 @@ import Faq from '../components/Faq';
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
+};
 const Page = () => {
     const [loading, setLoading] = useState(true);
     const [isClient, setIsClient] = useState(false);
@@ -134,24 +151,93 @@ const Page = () => {
                         <p className={` text-justify mt-4 text-[#371275] md:text-xl ${inter.className}`}>At Moulavi Travels, we are dedicated to providing a comfortable, safe, and spiritual journey for all your Ziyara needs.
                         </p>
                     </div>
-                    <div className='text-[#371275] mt-4'>
-                        <div className='flex flex-col gap-4 lg:gap-8 '>
-                            {services.map((item) => (
-                                <div key={item._id} className="flex gap-4 lg:gap-8 md:items-center">
+                    <motion.div
+                            className="text-[#371275] mt-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
+                            <div className="flex flex-col gap-4 lg:gap-8">
+                                {/* Service 1 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
                                         className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
                                     />
                                     <div>
-                                        <h3 className=" md:text-xl font-bold">{item.title}</h3>
-                                        <p>{item.desc}</p>
+                                        <h3 className="md:text-xl font-bold">Ziyara Bus Booking</h3>
+                                        <p>Simple and secure bus booking for your holy pilgrimage with just a few clicks.</p>
                                     </div>
-                                </div>
-                            ))}
+                                </motion.div>
 
-                        </div>
-                    </div>
+                                {/* Service 2 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                    <Image
+                                        src={tick}
+                                        alt="tick"
+                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    />
+                                    <div>
+                                        <h3 className="md:text-xl font-bold">Reliable Schedule</h3>
+                                        <p>Travel with confidence knowing you're getting timely and reliable bus services.</p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Service 3 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                    <Image
+                                        src={tick}
+                                        alt="tick"
+                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    />
+                                    <div>
+                                        <h3 className="md:text-xl font-bold">Flexible Tour Options</h3>
+                                        <p>Find Ziyara packages that fit your schedule and spiritual preferences.</p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Service 4 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                    <Image
+                                        src={tick}
+                                        alt="tick"
+                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    />
+                                    <div>
+                                        <h3 className="md:text-xl font-bold">Dedicated Customer Support</h3>
+                                        <p>Get help and support whenever you need it, 24/7, for a worry-free journey.</p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Service 5 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                    <Image
+                                        src={tick}
+                                        alt="tick"
+                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    />
+                                    <div>
+                                        <h3 className="md:text-xl font-bold">Comfort & Safety Assured</h3>
+                                        <p>Travel safely and securely with our well-maintained fleet and experienced drivers.</p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Service 6 */}
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                    <Image
+                                        src={tick}
+                                        alt="tick"
+                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    />
+                                    <div>
+                                        <h3 className="md:text-xl font-bold">Special Ziyara Packages</h3>
+                                        <p>Exclusive deals and discounts tailored just for your spiritual travel.</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
 
 
                 </div>
