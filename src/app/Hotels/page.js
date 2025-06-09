@@ -10,14 +10,32 @@ import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
 import WhatsappAndCall from '../components/WhatsappAndCall';
+import { motion } from 'framer-motion';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.6, ease: 'easeOut' }
+  },
+};
 const Page = () => {
 
-      const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +63,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Enjoy comfortable stays and warm hospitality that make you feel at home, no matter where you travel.
                         </p>
-                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Stay Now </button>
+                        <button onClick={() => handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Stay Now </button>
                     </div>
                 </div>
 
@@ -64,10 +82,16 @@ const Page = () => {
 
                         </div>
 
-                        <div className='text-[#371275] mt-4'>
-                            <div className='flex flex-col gap-4 lg:gap-8'>
+                        <motion.div
+                            className="text-[#371275] mt-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
+                            <div className="flex flex-col gap-4 lg:gap-8">
                                 {/* Service 1 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -75,12 +99,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Wide Hotel Selection (Ziyara-Focused)</h3>
-                                        <p>Find the ideal stay for your Ziyara, from guesthouses to hotels with prayer spaces.</p>
+                                        <p>Find the ideal stay for your Ziyara, from guesthouses to hotels with prayer spaces.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 2 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -88,12 +112,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">24/7 Pilgrim Support</h3>
-                                        <p>Find the ideal stay for your spiritual journey — from guesthouses near holy sites to hotels with prayer spaces.</p>
+                                        <p>Find the ideal stay for your spiritual journey — from guesthouses near holy sites to hotels with prayer spaces.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 3 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -101,12 +125,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Easy Booking Process</h3>
-                                        <p>Book your Ziyara stay in just a few clicks — simple and hassle-free..</p>
+                                        <p>Book your Ziyara stay in just a few clicks — simple and hassle-free.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 4 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -114,25 +138,25 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Expert Recommendations (Sacred Stays)</h3>
-                                        <p>Find the best places to stay near holy sites for a peaceful Ziyara.</p>
+                                        <p>Find the best places to stay near holy sites for a peaceful Ziyara.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 5 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
                                         className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
                                     />
                                     <div>
-                                        <h3 className="md:text-xl font-bold">Best Price Guaranteet</h3>
-                                        <p>Book with confidence knowing you’re getting the best deal..</p>
+                                        <h3 className="md:text-xl font-bold">Best Price Guarantee</h3>
+                                        <p>Book with confidence knowing you’re getting the best deal.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 6 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -142,17 +166,18 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Additional Ziyara Services</h3>
                                         {/* <p>We’re here to assist you at every step, anytime you need help during your journey.</p> */}
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
+
                     </div>
                 </div>
 
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
-                <WhatsappAndCall id='call'/>
-                <Faq/>
+                <WhatsappAndCall id='call' />
+                <Faq />
                 <Contact />
 
             </div>

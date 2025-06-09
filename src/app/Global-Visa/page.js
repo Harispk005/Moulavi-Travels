@@ -11,14 +11,32 @@ import Faq from '../components/Faq';
 import VisaExperts from './VisaExperts';
 import WhatsappAndCall from '../components/WhatsappAndCall';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
+};
 const Page = () => {
- const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -47,7 +65,7 @@ const Page = () => {
                             From guidance to the final destination, we make every part of your journey easy.
 
                         </p>
-                        <button onClick={()=> handleScrollToSection('call')}  className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Visa Now</button>
+                        <button onClick={() => handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Visa Now</button>
                     </div>
                 </div>
 
@@ -66,10 +84,16 @@ const Page = () => {
                             </p>
                         </div>
 
-                        <div className='text-[#371275] mt-4'>
-                            <div className='flex flex-col gap-4 lg:gap-8'>
+                        <motion.div
+                            className="text-[#371275] mt-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
+                            <div className="flex flex-col gap-4 lg:gap-8">
                                 {/* Service 1 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -79,10 +103,10 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Visa Consultation</h3>
                                         <p>Your trusted advisor for visa queries, offering clear guidance every step of the way.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 2 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -92,10 +116,10 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Embassy Liaison</h3>
                                         <p>Direct embassy communication for quick processing and issue resolution.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 3 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -105,10 +129,10 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Application Assistance</h3>
                                         <p>Expert guidance from start to finish, simplifying your application journey.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 4 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -118,10 +142,10 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Status Updates</h3>
                                         <p>Stay informed with regular updates throughout your application process.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 5 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -131,10 +155,10 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Document Review</h3>
                                         <p>Meticulous document review to ensure accuracy and increase approval success.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 6 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -144,20 +168,19 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Post-Approval Support</h3>
                                         <p>Ongoing support after approval, ensuring a smooth and seamless journey ahead.</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
-
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
-                <WhatsappAndCall id='call'/>
+                <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
-                <Footer/>
+                <Footer />
 
             </div>
         </div>

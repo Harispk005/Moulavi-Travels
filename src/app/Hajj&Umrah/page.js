@@ -10,13 +10,30 @@ import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
 import SacredJourneys from './SacredJourneys';
 import WhatsappAndCall from '../components/WhatsappAndCall';
+import { motion } from 'framer-motion';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
 
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
+};
 const Page = () => {
- const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -43,7 +60,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Your dream of visiting the holy cities of Mecca and Madina is our responsibility. Moulavi Travels ensures a smooth, peaceful journey for your Hajj and Umrah.
                         </p>
-                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Hajj/Umrah Now</button>
+                        <button onClick={() => handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Hajj/Umrah Now</button>
                     </div>
                 </div>
 
@@ -62,10 +79,16 @@ const Page = () => {
 
                         </div>
 
-                        <div className='text-[#371275] mt-4'>
-                            <div className='flex flex-col gap-4 lg:gap-8'>
+                        <motion.div
+                            className="text-[#371275] mt-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
+                            <div className="flex flex-col gap-4 lg:gap-8">
                                 {/* Service 1 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -73,13 +96,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Visa Assistance</h3>
-                                        <p>Easy visa process to make your travel stress-free.
-                                        </p>
+                                        <p>Easy visa process to make your travel stress-free.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 2 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -87,13 +109,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Accommodation Arrangements</h3>
-                                        <p>Convenient, comfortable stays near sacred places.
-                                        </p>
+                                        <p>Convenient, comfortable stays near sacred places.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 3 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -101,13 +122,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Expert Guided Tours</h3>
-                                        <p>Customized journeys designed for groups of every size.
-                                        </p>
+                                        <p>Customized journeys designed for groups of every size.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 4 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -115,13 +135,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">24/7 Support</h3>
-                                        <p>Help is just a call away, with our dedicated support team available 24/7.
-                                        </p>
+                                        <p>Help is just a call away, with our dedicated support team available 24/7.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 5 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -129,13 +148,12 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Transportation Services</h3>
-                                        <p> Efficient and dependable transportation to support your spiritual journey.
-                                        </p>
+                                        <p>Efficient and dependable transportation to support your spiritual journey.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 6 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -143,19 +161,18 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Group Packages</h3>
-                                        <p>Customized journeys designed for groups of every size.
-                                        </p>
+                                        <p>Customized journeys designed for groups of every size.</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
-                <WhatsappAndCall id='call'/>
+                <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
 

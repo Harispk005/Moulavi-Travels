@@ -11,15 +11,31 @@ import Faq from '../components/Faq';
 import Stamp from './Stamp';
 import WhatsappAndCall from '../components/WhatsappAndCall';
 import Footer from '../components/Footer';
-
-
-
+import { motion } from 'framer-motion';
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
+};
+
 
 const Page = () => {
-     const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -48,7 +64,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             We work with trusted authorities to officially attest your documents, ensuring they&apos;sre valid and accepted worldwid
                         </p>
-                        <button  onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</button>
+                        <button onClick={() => handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Service Now</button>
                     </div>
                 </div>
 
@@ -68,10 +84,19 @@ const Page = () => {
 
                         </div>
 
-                        <div className='text-[#371275] mt-4'>
-                            <div className='flex flex-col gap-4 lg:gap-8'>
+                        <motion.div
+                            className="text-[#371275] mt-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
+                            <div className="flex flex-col gap-4 lg:gap-8">
                                 {/* Service 1 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -81,10 +106,13 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Document Verification</h3>
                                         <p>Offers precise and certified document translation services.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 2 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -94,10 +122,13 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Tracking & Delivery</h3>
                                         <p>Timely progress updates and delivery.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 3 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -107,10 +138,13 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Embassy Liaison</h3>
                                         <p>Streamline communication with embassies for faster processing.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 4 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -120,10 +154,13 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Translation Services</h3>
                                         <p>Offers precise and certified document translation services.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 5 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -133,10 +170,13 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Consultation & Guidance</h3>
                                         <p>Professional guidance at every step of the process.</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Service 6 */}
-                                <div className="flex gap-4 lg:gap-8 md:items-center">
+                                <motion.div
+                                    className="flex gap-4 lg:gap-8 md:items-center"
+                                    variants={itemVariants}
+                                >
                                     <Image
                                         src={tick}
                                         alt="tick"
@@ -146,19 +186,19 @@ const Page = () => {
                                         <h3 className="md:text-xl font-bold">Express Services</h3>
                                         <p>Fast-track attestation for your urgent requirements.</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
-                <WhatsappAndCall id='call'/>
+                <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
-                <Footer/>
+                <Footer />
 
             </div>
         </div>

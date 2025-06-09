@@ -24,7 +24,7 @@ const Middleview = () => {
             Discover our story
           </h1>
           <p className='mt-4 md:mt-6 text-base md:text-2xl font-medium text-white max-w-2xl'>
-            Get to know who we are and what drives our mission at Moulavi Travels.
+           A dedicated team making your spiritual journeys meaningful and unforgettable.
           </p>
         </div>
       </div>
