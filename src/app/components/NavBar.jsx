@@ -115,7 +115,7 @@ const NavBar = ({ bgColor = 'transparent' }) => {
                     {dropdown && (
                         <ul className='absolute left-1/2 -translate-x-1/2 bg-white text-black shadow-lg rounded mt-2 z-50 w-[200px] flex flex-col'>
                             <a href="/Flight-ticket" className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}  >Flight Ticket</a>
-                            <a href='/bus-service' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} >Bus Ticket</a>
+                            <a href='/bus-service' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} >Bus Service</a>
                             <a href='/Hotels' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}>Hotels</a>
                             <a href='/Hajj&Umrah' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`} >Hajj & Umrah</a>
                             <a href='/Global-Visa' className={`hover:text-[#371275] cursor-pointer border-b border-[#ccc] py-3 px-3 ${inter.className}`}>Global Visa</a>

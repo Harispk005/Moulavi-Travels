@@ -92,6 +92,14 @@ const Page = () => {
 
     if (!isClient) return null;
 
+      const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+
     return (
         <div className="relative bg-[#FFBD05] min-h-screen">
             <NavBar />
@@ -114,7 +122,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Enjoy comfortable stays and warm hospitality that make you feel at home, no matter where you travel.
                         </p>
-                        <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
+                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Bus Ticket Now</button>
                     </div>
                 </div>
 
@@ -173,7 +181,16 @@ const Page = () => {
                                     <td className="px-6 py-4 border-b border-[#371275]">{item.daysAvailable}</td>
                                     <td className="px-6 py-4 border-b border-[#371275]">{item.status}</td>
                                     <td className="px-6 py-4 border-b border-[#371275]">
-                                        <button className="bg-[#371275] text-[#FFBD05] px-4 py-2 rounded hover:bg-[#2d0e61] transition">Book</button>
+                                        <a
+                                            href={`https://wa.me/966552678666?text=${encodeURIComponent(
+                                                `Hi, I'm interested in booking a bus to ${item.destination} (Route: ${item.route}) departing at ${item.time} on ${item.daysAvailable}.`
+                                            )}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-[#371275] text-[#FFBD05] px-4 py-2 rounded hover:bg-[#2d0e61] transition"
+                                        >
+                                            Book
+                                        </a>
                                     </td>
                                 </tr>
                             ))}
@@ -201,7 +218,7 @@ const Page = () => {
                     </div>
                 </div>
             </div>
-            <WhatsappAndCall/>
+            <WhatsappAndCall id='call' />
             <Contact id="contact_about" />
             <Footer />
 

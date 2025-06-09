@@ -26,6 +26,7 @@ const Faq = () => {
                 </h2>
             </div>
 
+
             <div className='flex flex-col p-4 max-w-7xl mx-auto bg-[#371275] w-full mt-4'>
                 <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 lg:mt-4'>
 

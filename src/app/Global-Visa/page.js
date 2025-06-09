@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import Image from 'next/image'
 import GlobalVisa from '../Images/globalvisa-bg.jpg';
@@ -8,6 +9,8 @@ import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
 import VisaExperts from './VisaExperts';
+import WhatsappAndCall from '../components/WhatsappAndCall';
+import Footer from '../components/Footer';
 
 
 
@@ -15,7 +18,12 @@ const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 const Page = () => {
-
+ const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
         <div className='bg-[#FFBD05]'>
             <NavBar />
@@ -39,7 +47,7 @@ const Page = () => {
                             From guidance to the final destination, we make every part of your journey easy.
 
                         </p>
-                        <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
+                        <button onClick={()=> handleScrollToSection('call')}  className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Visa Now</button>
                     </div>
                 </div>
 
@@ -146,8 +154,10 @@ const Page = () => {
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
+                <WhatsappAndCall id='call'/>
                 <Faq />
                 <Contact />
+                <Footer/>
 
             </div>
         </div>

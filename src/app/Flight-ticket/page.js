@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Flight_Middleview from './Flight_Middleview';
 import Faq from '../components/Faq';
+import WhatsappAndCall from '../components/WhatsappAndCall';
 
 const Page = () => {
   const [loading, setLoading] = useState(true);
@@ -63,9 +64,11 @@ const Page = () => {
     <div className="relative bg-[#FFBD05] min-h-screen">
       <NavBar />
       <Flight_Middleview/>
+      
       <Faq/>
       <Contact id="contact_about" />
       <Footer />
+
 
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col gap-4 items-center justify-center bg-[#FFBD05] text-white text-2xl">

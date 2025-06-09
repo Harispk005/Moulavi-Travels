@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import Image from 'next/image'
 import Hajj from '../Images/hajj&umrah-bg.jpg'
@@ -8,13 +9,19 @@ import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
 import SacredJourneys from './SacredJourneys';
+import WhatsappAndCall from '../components/WhatsappAndCall';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 const Page = () => {
-
+ const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
         <div className='bg-[#FFBD05]'>
             <NavBar />
@@ -36,7 +43,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Your dream of visiting the holy cities of Mecca and Madina is our responsibility. Moulavi Travels ensures a smooth, peaceful journey for your Hajj and Umrah.
                         </p>
-                        <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
+                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Hajj/Umrah Now</button>
                     </div>
                 </div>
 
@@ -148,6 +155,7 @@ const Page = () => {
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
+                <WhatsappAndCall id='call'/>
                 <Faq />
                 <Contact />
 

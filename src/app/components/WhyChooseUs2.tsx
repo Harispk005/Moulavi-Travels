@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import busServiceImg from '../Images/passport.jpg';
 import { Inknut_Antiqua, Inter } from 'next/font/google';
-import WhatsappAndCall from './WhatsappAndCall';
+
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -35,7 +35,7 @@ const WhyChooseUs2 = () => {
         </div>
       </div>
 
-      <WhatsappAndCall />
+   
     
     </>
   )

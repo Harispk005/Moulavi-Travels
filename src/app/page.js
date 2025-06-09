@@ -14,13 +14,12 @@ import WhyChooseUs from './components/WhyCooseUs';
 import ServiceFlow from './components/ServiceFlow';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Ensures client-only rendering
+    setIsClient(true);
     const startTime = Date.now();
     const maxLoadingDuration = 7000;
 
@@ -63,7 +62,7 @@ export default function Home() {
     };
   }, []);
 
-  if (!isClient) return null; // Prevent server-side mismatch
+  if (!isClient) return null;
 
   return (
     <div className="relative bg-[#FFBD05] min-h-screen">
@@ -84,6 +83,28 @@ export default function Home() {
       </div>
       <Footer />
 
+      {/* Floating Call and WhatsApp Icons */}
+      <div className="fixed bottom-5 right-4 flex flex-col gap-4 z-40  ">
+     
+        <a
+          href="https://wa.me/966552678666?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20ticket%20with%20Moulavi%20Travels."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-[50%] h-[53px] flex justify-center items-center shadow-lg transition"
+        >
+          <i className="fab fa-whatsapp text-2xl"></i>
+        </a>
+
+   
+        <a
+          href='tel:+966552678666' 
+          className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-[50%] h-[53px] flex justify-center items-center shadow-lg transition"
+        >
+          <i className="fas fa-phone text-xl"></i>
+        </a>
+      </div>
+
+      {/* Loading screen */}
       {loading && (
         <div className="fixed inset-0 z-50 flex flex-col gap-4 items-center justify-center bg-[#FFBD05] text-white text-2xl">
           <Image

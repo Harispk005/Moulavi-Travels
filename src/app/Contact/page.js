@@ -160,7 +160,15 @@ const page = () => {
                                 <h2 className={`${inter.className} text-[#371275] md:text-xl font-bold`}>Address</h2>
 
                             </div>
-                            <h3 className='text-[#371275] md:text-lg mt-4'>Near Tahweel, 2066 King Fahd Br Rd, 2066, Al Baghdadiyah Ash Sharqiyah District, 7971, Jeddah 22241, Saudi Arabia</h3>
+                            <a
+                                href="https://maps.app.goo.gl/sdaAvKQnv8avF1c58"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <h3 className='text-[#371275] md:text-lg mt-4 cursor-pointer hover:underline'>
+                                    Near Tahweel, 2066 King Fahd Br Rd, 2066, Al Baghdadiyah Ash Sharqiyah District, 7971, Jeddah 22241, Saudi Arabia
+                                </h3>
+                            </a>
 
                         </div>
                         <div>

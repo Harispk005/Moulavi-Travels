@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import Image from 'next/image'
 import hotel from '../Images/hotelbg.jpg'
@@ -8,12 +9,20 @@ import StayWithUs from './StayWithUs';
 import Contact from '../components/Contact';
 import NavBar from '../components/NavBar';
 import Faq from '../components/Faq';
+import WhatsappAndCall from '../components/WhatsappAndCall';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 const Page = () => {
+
+      const handleScrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className='bg-[#FFBD05]'>
@@ -36,7 +45,7 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Enjoy comfortable stays and warm hospitality that make you feel at home, no matter where you travel.
                         </p>
-                        <a href='#' className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05]'>Book Your Ziyara Now</a>
+                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Stay Now </button>
                     </div>
                 </div>
 
@@ -142,6 +151,7 @@ const Page = () => {
                 {/* why choose us */}
 
                 <WhyChooseUs2 />
+                <WhatsappAndCall id='call'/>
                 <Faq/>
                 <Contact />
 
