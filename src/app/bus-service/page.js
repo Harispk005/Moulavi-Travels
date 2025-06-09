@@ -181,7 +181,7 @@ const Page = () => {
                                     />
                                     <div>
                                         <h3 className="md:text-xl font-bold">Reliable Schedule</h3>
-                                        <p>Travel with confidence knowing you're getting timely and reliable bus services.</p>
+                                        <p>Travel with confidence knowing you&apos;re getting timely and reliable bus services.</p>
                                     </div>
                                 </motion.div>
 
