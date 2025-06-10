@@ -62,14 +62,6 @@ export default function Admin() {
     },
     {
       title: "Bus Services",
-      description: "Configure available bus routes and services",
-      icon: Bus,
-      href: "/admin/bus-services",
-      color: "from-blue-500 to-blue-600",
-      stats: "12 Routes",
-    },
-    {
-      title: "Bus Timing",
       description: "Set and update bus schedules and timings",
       icon: Clock,
       href: "/admin/bus-timing",
@@ -241,13 +233,6 @@ export default function Admin() {
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-white mb-6">Quick Actions</h3>
           <div className="flex flex-wrap gap-4">
-            <button
-              className="flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-105 shadow-lg"
-              onClick={() => router.push("/admin/bus-services")}
-            >
-              <Bus className="h-5 w-5 mr-2" />
-              Add New Route
-            </button>
             <button
               className="flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-105 shadow-lg"
               onClick={() => router.push("/admin/bus-timing")}

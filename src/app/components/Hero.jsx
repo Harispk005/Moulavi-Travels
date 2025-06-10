@@ -114,14 +114,15 @@ const Hero = () => {
           )}
         </div>
 
-        <AnimatePresence>
+
+      </div>        <AnimatePresence>
           {openModal && selectedHero && (
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50"
+              className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/50 bg-opacity-50"
               onClick={() => setOpenModal(false)}
             >
               <motion.div
@@ -130,7 +131,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: -20 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="bg-white rounded-lg shadow-lg w-full mx-4 p-6 relative md:w-[700px] md:h-[80vh] md:grid md:grid-cols-2 md:mt-5"
+                className="bg-white rounded-lg shadow-lg w-full max-w-xl mx-4 p-6 relative  md:mt-5"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
@@ -140,42 +141,19 @@ const Hero = () => {
                   &times;
                 </button>
 
-                {selectedHero.posters && selectedHero.posters.length > 1 ? (
-                  <div className="relative">
-                    <Image
-                      src={selectedHero.posters[carouselIndex]}
-                      alt="Poster"
-                      className="w-full h-auto mb-4 rounded"
-                      width={600}
-                      height={400}
-                    />
-                    <div className="flex justify-between absolute top-1/2 left-0 right-0 px-4">
-                      <button onClick={prevSlide} className="text-3xl font-bold text-white">&#8249;</button>
-                      <button onClick={nextSlide} className="text-3xl font-bold text-white">&#8250;</button>
-                    </div>
-                  </div>
-                ) : selectedHero.posters && selectedHero.posters.length === 1 ? (
-                  <Image
-                    src={posters[selectedOccasion][carouselIndex]}
-                    alt="Poster"
-                    className="w-full h-auto mb-4 rounded"
-                  />
-                ) : null}
-
                 <div className='flex flex-col items-center justify-center'>
                   <h2 className="text-lg md:text-xl font-semibold text-center">{selectedHero.title}</h2>
-                  <p className='hidden md:block text-justify py-2 mx-5'>
+                  <p className='text-justify py-2 mx-5'>
                     {selectedHero.desc}
                   </p>
-                  <button className="w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition ml-6 ">
-                    Book Now
-                  </button>
+                  <a href="/packages" className="w-fit bg-yellow-500 text-white py-2 px-8 rounded hover:bg-yellow-600 transition ">
+                    View More
+                  </a>
                 </div>
               </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
     </div>
   );
 };

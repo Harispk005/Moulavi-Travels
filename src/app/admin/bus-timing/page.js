@@ -43,6 +43,8 @@ export default function BusTimingEditor() {
     try {
       const res = await axios.get("https://moulavitravels-backend.onrender.com/bus-timing")
       setTimings(res.data)
+      console.log(res.data);
+
     } catch (err) {
       console.error("❌ Error fetching bus timings:", err.message)
     }
@@ -164,7 +166,7 @@ export default function BusTimingEditor() {
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">Bus Timing Editor</h1>
+                  <h1 className="text-2xl font-bold text-white">Bus Service Editor</h1>
                   <p className="text-purple-200 text-sm">Manage schedules and departure times</p>
                 </div>
               </div>
@@ -257,9 +259,8 @@ export default function BusTimingEditor() {
                       Schedule #{index + 1}
                     </span>
                     <div
-                      className={`w-3 h-3 rounded-full ${
-                        timing.status === "Available" ? "bg-green-400" : "bg-red-400"
-                      }`}
+                      className={`w-3 h-3 rounded-full ${timing.status === "Available" ? "bg-green-400" : "bg-red-400"
+                        }`}
                     ></div>
                   </div>
                   <div className="flex gap-2">
@@ -317,11 +318,10 @@ export default function BusTimingEditor() {
                           editingId === timing._id && setEditedTiming({ ...editedTiming, route: e.target.value })
                         }
                         readOnly={editingId !== timing._id}
-                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${
-                          editingId === timing._id
+                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${editingId === timing._id
                             ? "bg-white/20 border-green-400/50 text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                             : "bg-white/5 border-white/10 text-white cursor-default"
-                        }`}
+                          }`}
                       />
                     </div>
 
@@ -336,11 +336,10 @@ export default function BusTimingEditor() {
                           editingId === timing._id && setEditedTiming({ ...editedTiming, destination: e.target.value })
                         }
                         readOnly={editingId !== timing._id}
-                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${
-                          editingId === timing._id
+                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${editingId === timing._id
                             ? "bg-white/20 border-green-400/50 text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                             : "bg-white/5 border-white/10 text-white cursor-default"
-                        }`}
+                          }`}
                       />
                     </div>
                   </div>
@@ -357,11 +356,10 @@ export default function BusTimingEditor() {
                           editingId === timing._id && setEditedTiming({ ...editedTiming, time: e.target.value })
                         }
                         readOnly={editingId !== timing._id}
-                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${
-                          editingId === timing._id
+                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${editingId === timing._id
                             ? "bg-white/20 border-green-400/50 text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                             : "bg-white/5 border-white/10 text-white cursor-default"
-                        }`}
+                          }`}
                       />
                     </div>
 
@@ -370,20 +368,19 @@ export default function BusTimingEditor() {
                         Days Available
                       </label>
                       <input
-                        type="number"
-                        min="1"
+                        type="text"
                         value={editingId === timing._id ? editedTiming.daysAvailable : timing.daysAvailable}
                         onChange={(e) =>
                           editingId === timing._id &&
                           setEditedTiming({ ...editedTiming, daysAvailable: e.target.value })
                         }
                         readOnly={editingId !== timing._id}
-                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${
-                          editingId === timing._id
+                        className={`w-full px-3 py-2 rounded-lg border transition-all duration-200 text-sm ${editingId === timing._id
                             ? "bg-white/20 border-green-400/50 text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                             : "bg-white/5 border-white/10 text-white cursor-default"
-                        }`}
+                          }`}
                       />
+
                     </div>
                   </div>
 
@@ -418,11 +415,10 @@ export default function BusTimingEditor() {
                       </div>
                     ) : (
                       <div
-                        className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                          timing.status === "Available"
+                        className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${timing.status === "Available"
                             ? "bg-green-500/20 text-green-300 border border-green-400/30"
                             : "bg-red-500/20 text-red-300 border border-red-400/30"
-                        }`}
+                          }`}
                       >
                         {timing.status === "Available" ? (
                           <CheckCircle className="h-4 w-4 mr-1" />
@@ -495,13 +491,13 @@ export default function BusTimingEditor() {
                 Days Available
               </label>
               <input
-                type="number"
-                min="1"
+                type="text"
                 value={newTiming.daysAvailable}
                 onChange={(e) => setNewTiming({ ...newTiming, daysAvailable: e.target.value })}
-                placeholder="Number of days per week"
+                placeholder="Enter available days (e.g., Monday, Wednesday)"
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
               />
+
             </div>
 
             <div className="col-span-full">
