@@ -313,7 +313,7 @@ export default function ChangePasswordPage() {
           </div>
           <div className="space-y-2 text-sm text-amber-200">
             <p>• Never share your password with anyone</p>
-            <p>• Use a unique password that you don't use elsewhere</p>
+            <p>• Use a unique password that you don&apos;t use elsewhere</p>
             <p>• Consider using a password manager</p>
             <p>• Change your password regularly for better security</p>
           </div>
