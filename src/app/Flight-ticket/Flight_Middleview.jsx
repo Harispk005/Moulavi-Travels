@@ -153,7 +153,7 @@ const Middleview = () => {
                                 <Image
                                     src={tick}
                                     alt="tick"
-                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                    className="h-9 w-9  lg:h-12 lg:w-12 object-cover md:mt-[10px]"
                                 />
                                 <div>
                                     <h3 className="md:text-xl font-bold">{service.title}</h3>

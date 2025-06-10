@@ -55,7 +55,7 @@ const About = () => {
                         <div className="flex gap-2 text-[#371275]">
                             <Image src={tick} alt="tick" className="h-8 w-8 object-cover md:mt-[10px]" />
                             <div className="md:ml-[10px]">
-                                <h1 className={`text-xl font-normal ${inknutAntiqua.className}`}>Manpower Solutions & Visa Services</h1>
+                                <h1 className={`text-xl font-normal ${inter.className}`}>Manpower Solutions & Visa Services</h1>
                                 <h3 className={`text-base ${inter.className}`}>Expert manpower solutions and visa services for a global workforce.</h3>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ const About = () => {
                         <div className="flex gap-2 text-[#371275]">
                             <Image src={tick} alt="tick" className="h-8 w-8 object-cover md:mt-[10px]" />
                             <div className="md:ml-[10px]">
-                                <h1 className={`text-xl font-normal ${inknutAntiqua.className}`}>Best Immigration Consultants</h1>
+                                <h1 className={`text-xl font-normal ${inter.className}`}>Best Immigration Consultants</h1>
                                 <h3 className={`text-base ${inter.className}`}>Trusted immigration consultants for a stress-free experience.</h3>
                             </div>
                         </div>
@@ -78,16 +78,16 @@ const About = () => {
                                 MORE ABOUT US
                             </button>
 
-                            <div className="font-[550] text-base md:text-xl py-2 md:py-3 flex items-center">
+                            <div className="font-[550] text-base md:text-xl py-2 md:py-3 flex items-center cursor-pointer">
                                 <Image
                                     src={Contact}
                                     alt="contact"
                                     className="mr-2 h-10 w-10 md:h-14 md:w-14"
                                 />
-                                <div>
+                                <a href="tel:+966552678666">
                                     Contact Agent<br />
                                     +966 552678666
-                                </div>
+                                </a>
                             </div>
 
                         </div>
