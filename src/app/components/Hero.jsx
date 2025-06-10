@@ -5,11 +5,11 @@ import Image from 'next/image';
 import ReactPlayer from 'react-player';
 import logo from '../Images/moulavilonglogo.png';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Inknut_Antiqua, Inter  } from 'next/font/google';
+import { Inknut_Antiqua, Inter } from 'next/font/google';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
-const inter = Inter ({ weight: '600', subsets: ['latin'] });
+const inter = Inter({ weight: '600', subsets: ['latin'] });
 
 const Hero = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -44,12 +44,12 @@ const Hero = () => {
     setCarouselIndex((prev) => (prev - 1 + selectedHero.posters.length) % selectedHero.posters.length);
   };
 
-   const handleScrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className='relative w-full h-[80vh] md:h-screen overflow-hidden'>
@@ -77,23 +77,28 @@ const Hero = () => {
       />
 
       <div className='absolute inset-0 flex flex-col justify-center items-center z-10 bg-black/40'>
-        <div className='max-w-[800px] mt-10 md:mt-15'>
+        <div className='max-w-[800px] mt-35 md:mt-15'>
           <Image src={logo} alt='Logo' width={350} height={70} priority />
         </div>
 
-        <div className='w-full p-3 md:p-10 mt-20 md:mt-0 md:my-5 text-center'>
+        <div className='w-full p-3 md:p-10 mt-4 md:mt-0 md:my-5 text-center'>
           <h1 className={`text-2xl md:text-4xl font-semibold md:mt-10 text-white ${inknutAntiqua.className}`}>
             JOURNEY WITH FAITH, EXPLORE <br /> WITH WONDER
           </h1>
           <h1 className='mt-4 mb-10 md:text-3xl font-semibold text-white'>
             Book Your Ziyara Now, Let Us Guide You Home.
           </h1>
-          <button className='bg-[#FFBD05] text-[#371275] font-semibold py-3 px-10 rounded md:text-2xl' onClick={() => handleScrollToSection('services')}>
-           Explore Now
-          </button>
+          <div className='flex flex-row justify-center items-center gap-4 md:gap-10'>
+            <a href='/packages' className='bg-white text-[#371275] font-semibold py-3 px-4 md:px-10 rounded md:text-2xl cursor-pointer hover:bg-[#371275] hover:text-white transition-colors duration-300 text-sm' >
+              Explore Packages
+            </a>
+            <button className='bg-[#FFBD05] text-[#371275] font-semibold py-3 px-10 rounded md:text-2xl hover:bg-[#371275] hover:text-white transition-colors duration-300 text-sm' onClick={() => handleScrollToSection('services')}>
+              Our Services            </button>
+
+          </div>
         </div>
 
-        <div className='w-full py-5 bg-[#371275]/80 flex justify-around mt-20 md:mt-5 text-white md:h-[70px]'>
+        <div className='w-full py-5 bg-[#371275]/80 flex justify-around mt-10 md:mt-5 text-white md:h-[70px]'>
           {heroes.length === 0 ? (
             <p className="text-white">Loading...</p>
           ) : (

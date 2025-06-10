@@ -110,7 +110,7 @@ const Page = () => {
 
     if (!isClient) return null;
 
-      const handleScrollToSection = (id) => {
+    const handleScrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -140,7 +140,9 @@ const Page = () => {
                         <p className='mt-2 md:mt-6 text-base md:text-2xl font-normal text-white max-w-2xl mb-6 lg:mb-10'>
                             Enjoy comfortable stays and warm hospitality that make you feel at home, no matter where you travel.
                         </p>
-                        <button onClick={()=> handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Bus Ticket Now</button>
+                        <button onClick={() => handleScrollToSection('call')} className='uppercase px-10 md:px-13 py-4 md:py-5 bg-[#371275] w-fit text-white trxl-lg lg:text-2xl border-2 md:border-4 rounded-xl border-[#FFBD05] cursor-pointer'>Book Your Bus Ticket Now</button>
+
+
                     </div>
                 </div>
 
@@ -152,92 +154,92 @@ const Page = () => {
                         </p>
                     </div>
                     <motion.div
-                            className="text-[#371275] mt-4"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.3 }}
-                        >
-                            <div className="flex flex-col gap-4 lg:gap-8">
-                                {/* Service 1 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Ziyara Bus Booking</h3>
-                                        <p>Simple and secure bus booking for your holy pilgrimage with just a few clicks.</p>
-                                    </div>
-                                </motion.div>
+                        className="text-[#371275] mt-4"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                    >
+                        <div className="flex flex-col gap-4 lg:gap-8">
+                            {/* Service 1 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Ziyara Bus Booking</h3>
+                                    <p>Simple and secure bus booking for your holy pilgrimage with just a few clicks.</p>
+                                </div>
+                            </motion.div>
 
-                                {/* Service 2 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Reliable Schedule</h3>
-                                        <p>Travel with confidence knowing you&apos;re getting timely and reliable bus services.</p>
-                                    </div>
-                                </motion.div>
+                            {/* Service 2 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Reliable Schedule</h3>
+                                    <p>Travel with confidence knowing you&apos;re getting timely and reliable bus services.</p>
+                                </div>
+                            </motion.div>
 
-                                {/* Service 3 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Flexible Tour Options</h3>
-                                        <p>Find Ziyara packages that fit your schedule and spiritual preferences.</p>
-                                    </div>
-                                </motion.div>
+                            {/* Service 3 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Flexible Tour Options</h3>
+                                    <p>Find Ziyara packages that fit your schedule and spiritual preferences.</p>
+                                </div>
+                            </motion.div>
 
-                                {/* Service 4 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Dedicated Customer Support</h3>
-                                        <p>Get help and support whenever you need it, 24/7, for a worry-free journey.</p>
-                                    </div>
-                                </motion.div>
+                            {/* Service 4 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Dedicated Customer Support</h3>
+                                    <p>Get help and support whenever you need it, 24/7, for a worry-free journey.</p>
+                                </div>
+                            </motion.div>
 
-                                {/* Service 5 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Comfort & Safety Assured</h3>
-                                        <p>Travel safely and securely with our well-maintained fleet and experienced drivers.</p>
-                                    </div>
-                                </motion.div>
+                            {/* Service 5 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Comfort & Safety Assured</h3>
+                                    <p>Travel safely and securely with our well-maintained fleet and experienced drivers.</p>
+                                </div>
+                            </motion.div>
 
-                                {/* Service 6 */}
-                                <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
-                                    <Image
-                                        src={tick}
-                                        alt="tick"
-                                        className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
-                                    />
-                                    <div>
-                                        <h3 className="md:text-xl font-bold">Special Ziyara Packages</h3>
-                                        <p>Exclusive deals and discounts tailored just for your spiritual travel.</p>
-                                    </div>
-                                </motion.div>
-                            </div>
-                        </motion.div>
+                            {/* Service 6 */}
+                            <motion.div className="flex gap-4 lg:gap-8 md:items-center" variants={itemVariants}>
+                                <Image
+                                    src={tick}
+                                    alt="tick"
+                                    className="h-8 w-8 lg:h-12 lg:w-12 object-cover md:mt-[10px]"
+                                />
+                                <div>
+                                    <h3 className="md:text-xl font-bold">Special Ziyara Packages</h3>
+                                    <p>Exclusive deals and discounts tailored just for your spiritual travel.</p>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
 
 
                 </div>
@@ -306,7 +308,7 @@ const Page = () => {
                 </div>
             </div>
             <WhatsappAndCall id='call' />
-            <Faq/>
+            <Faq />
             <Contact id="contact_about" />
             <Footer />
 

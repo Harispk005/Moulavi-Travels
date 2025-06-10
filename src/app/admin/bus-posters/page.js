@@ -9,7 +9,7 @@ export default function BusPosterEditor() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
   const [posters, setPosters] = useState([])
-  const [newPoster, setNewPoster] = useState({ image: null, desc: "" })
+  const [newPoster, setNewPoster] = useState({ image: null, desc: "", heading: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [previewImage, setPreviewImage] = useState(null)
   const [dragActive, setDragActive] = useState(false)
@@ -81,13 +81,16 @@ export default function BusPosterEditor() {
 
   const handleAddPoster = async () => {
     const token = localStorage.getItem("token")
-    if (!newPoster.image || !newPoster.desc) return alert("Please provide an image and description")
+    if (!newPoster.image || !newPoster.desc || !newPoster.heading) {
+      return alert("Please provide an image, heading, and description")
+    }
     setIsSubmitting(true)
 
     try {
       const formData = new FormData()
       formData.append("image", newPoster.image)
       formData.append("desc", newPoster.desc)
+      formData.append("heading", newPoster.heading)
 
       await axios.post("https://moulavitravels-backend.onrender.com/bus-posters", formData, {
         headers: {
@@ -96,7 +99,7 @@ export default function BusPosterEditor() {
         },
       })
 
-      setNewPoster({ image: null, desc: "" })
+      setNewPoster({ image: null, desc: "", heading: "" })
       setPreviewImage(null)
       await fetchPosters(token)
     } catch (err) {
@@ -195,30 +198,6 @@ export default function BusPosterEditor() {
               </div>
             </div>
 
-            {/* <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-purple-200 text-sm font-semibold uppercase tracking-wide">Active Content</p>
-                  <p className="text-3xl font-bold text-white mt-2">{posters.length}</p>
-                </div>
-                <div className="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-xl">
-                  <Eye className="h-8 w-8 text-white" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-purple-200 text-sm font-semibold uppercase tracking-wide">Last Updated</p>
-                  <p className="text-3xl font-bold text-white mt-2">Today</p>
-                </div>
-                <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
-                  <Calendar className="h-8 w-8 text-white" />
-                </div>
-              </div>
-            </div> */}
-
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -286,6 +265,20 @@ export default function BusPosterEditor() {
                       Download
                     </button>
                   </div>
+
+                  {/* Heading */}
+                  {poster.heading && (
+                    <div>
+                      <label className="block text-sm font-semibold text-purple-200 mb-1 uppercase tracking-wide">
+                        Heading
+                      </label>
+                      <h3 className="text-white text-lg font-bold leading-tight bg-white/5 p-3 rounded-lg border border-white/10">
+                        {poster.heading}
+                      </h3>
+                    </div>
+                  )}
+
+                  {/* Description */}
                   <div>
                     <label className="block text-sm font-semibold text-purple-200 mb-1 uppercase tracking-wide">
                       Description
@@ -351,6 +344,19 @@ export default function BusPosterEditor() {
 
               <div>
                 <label className="block text-sm font-semibold text-purple-200 mb-2 uppercase tracking-wide">
+                  Poster Heading
+                </label>
+                <input
+                  type="text"
+                  value={newPoster.heading}
+                  onChange={(e) => setNewPoster({ ...newPoster, heading: e.target.value })}
+                  placeholder="Write a catchy heading for the poster"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-purple-200 mb-2 uppercase tracking-wide">
                   Poster Description
                 </label>
                 <textarea
@@ -369,13 +375,13 @@ export default function BusPosterEditor() {
                 <label className="block text-sm font-semibold text-purple-200 mb-3 uppercase tracking-wide">
                   Preview
                 </label>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6 min-h-[300px] flex items-center justify-center">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6 min-h-[420px] flex flex-col">
                   {previewImage ? (
-                    <div className="relative w-full">
+                    <div className="relative w-full flex-1">
                       <img
                         src={previewImage || "/placeholder.svg"}
                         alt="Preview"
-                        className="w-full h-64 object-cover rounded-lg"
+                        className="w-full h-64 object-cover rounded-lg mb-4"
                       />
                       <button
                         onClick={clearPreview}
@@ -383,9 +389,29 @@ export default function BusPosterEditor() {
                       >
                         <X className="h-4 w-4" />
                       </button>
+
+                      {/* Preview Content */}
+                      <div className="space-y-3">
+                        {newPoster.heading && (
+                          <div>
+                            <p className="text-xs text-purple-300 uppercase tracking-wide mb-1">Heading Preview</p>
+                            <h3 className="text-white text-lg font-bold bg-white/10 p-2 rounded border border-white/20">
+                              {newPoster.heading}
+                            </h3>
+                          </div>
+                        )}
+                        {newPoster.desc && (
+                          <div>
+                            <p className="text-xs text-purple-300 uppercase tracking-wide mb-1">Description Preview</p>
+                            <p className="text-white text-sm bg-white/10 p-2 rounded border border-white/20">
+                              {newPoster.desc}
+                            </p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   ) : (
-                    <div className="text-center">
+                    <div className="text-center flex-1 flex flex-col justify-center">
                       <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-2xl mx-auto mb-4">
                         <ImageIcon className="h-8 w-8 text-purple-300" />
                       </div>
@@ -398,7 +424,7 @@ export default function BusPosterEditor() {
 
               <button
                 onClick={handleAddPoster}
-                disabled={isSubmitting || !newPoster.image || !newPoster.desc.trim()}
+                disabled={isSubmitting || !newPoster.image || !newPoster.desc.trim() || !newPoster.heading.trim()}
                 className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {isSubmitting ? (
