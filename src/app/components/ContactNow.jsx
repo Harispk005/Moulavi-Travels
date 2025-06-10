@@ -121,7 +121,7 @@ const ContactNow = () => {
                     </div>
                     <br />
                     <div className="flex items-center gap-2 md:mt-[20px] md:ml-10 justify-center">
-                        <button type="submit" className="bg-[#371275] text-[#FFBD05] w-[150px] h-[40px] rounded-[5px] hover:bg-[#371280] ml-15 md:ml-0">
+                        <button type="submit" className="bg-[#371275] text-[#FFBD05] w-[150px] h-[40px] rounded-[5px] duration-300 hover:bg-[#181224] ml-15 md:ml-0">
                             SEND
                         </button>
                     </div>

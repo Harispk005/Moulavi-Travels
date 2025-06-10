@@ -72,7 +72,7 @@ const About = () => {
                             <button
                                 onClick={() => router.push("/About_us")}
                                 className="bg-[#371275] text-[#FFBD05] font-[550] py-2 px-4 text-sm rounded cursor-pointer 
-             hover:bg-[#FFBD05] hover:text-[#371275] hover:border-2 hover:border-[#371275] 
+             hover:bg-[#FFBD05] hover:text-[#371275] hover:border-2 hover:border-[#371275] border-2 border-[#371275] duration-300
              md:py-3 md:px-5 md:text-base"
                             >
                                 MORE ABOUT US

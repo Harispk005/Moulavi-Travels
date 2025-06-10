@@ -97,7 +97,7 @@ const Contact = () => {
               className='w-full h-[60px] bg-white rounded-lg pl-14 pr-4 text-gray-600 placeholder-gray-400 border border-gray-300'
             />
           </div>
-          <button onClick={handleSubmit} className='bg-[#371275] text-[#FFBD05] w-full max-w-[400px] h-[60px] mt-5 rounded-lg hover:bg-[#201728]'>
+          <button onClick={handleSubmit} className='bg-[#371275] text-[#FFBD05] w-full max-w-[400px] h-[60px] mt-5 rounded-lg hover:bg-[#201728] duration-300'>
             Subscribe
           </button>
 
