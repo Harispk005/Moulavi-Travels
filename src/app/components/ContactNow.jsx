@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 import img from '../Images/Trip-amico__2__1-removebg-preview 1.png';
@@ -11,20 +11,35 @@ const inter = Inter({ weight: '600', subsets: ['latin'] });
 
 const ContactNow = () => {
     const form = useRef();
+    const [statusMessage, setStatusMessage] = useState('');
+    const [messageType, setMessageType] = useState(''); // 'success' or 'error'
+
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
 
     const sendEmail = (e) => {
         e.preventDefault();
+        const email = form.current.email.value;
+
+        if (!validateEmail(email)) {
+            setStatusMessage('Please enter a valid email address.');
+            setMessageType('error');
+            return;
+        }
+
         emailjs
             .sendForm('service_y1h2v89', 'template_f9xrp15', form.current, 'NXTiCRuwWTixiXGBL')
             .then(
                 (result) => {
-                    console.log('SUCCESS!', result.text);
-                    alert('Message sent successfully!');
+                    setStatusMessage('Message sent successfully!');
+                    setMessageType('success');
                     e.target.reset();
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
-                    alert('Failed to send message.');
+                    setStatusMessage('Failed to send message.');
+                    setMessageType('error');
                 }
             );
     };
@@ -32,7 +47,9 @@ const ContactNow = () => {
     return (
         <div className="py-5 mt-3 md:px-0 md:py-0 md:mt-0" id="contact-us">
             <div className="p-3 md:p-10">
-                <h1 className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}>
+                <h1
+                    className={`text-[#371275] md:text-xl border-3 border-[#371275] w-fit px-8 py-2 font-[550] ${inter.className}`}
+                >
                     CONTACT NOW
                 </h1>
                 <div className="w-full flex justify-between">
@@ -74,7 +91,9 @@ const ContactNow = () => {
                             className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 md:ml-5"
                         />
                     </div>
+
                     <br />
+
                     <div className="flex items-center gap-2 px-8 mt-8 md:px-0 md:ml-10 md:mt-[20px]">
                         <label htmlFor="email" className="text-[#371275] font-semibold">
                             Email
@@ -87,8 +106,10 @@ const ContactNow = () => {
                             className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8"
                         />
                     </div>
+
                     <br />
                     <br />
+
                     <div className="flex items-center gap-2 px-8 md:px-0 md:ml-10 md:mt-[20px]">
                         <label htmlFor="selectType" className="text-[#371275] font-semibold">
                             Select Type
@@ -96,7 +117,8 @@ const ContactNow = () => {
                         <select
                             id="selectType"
                             name="type"
-                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2">
+                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2"
+                        >
                             <option value=""></option>
                             <option value="International">International</option>
                             <option value="Domestic">Domestic</option>
@@ -107,7 +129,9 @@ const ContactNow = () => {
                             <option value="Other">Other</option>
                         </select>
                     </div>
+
                     <br />
+
                     <div className="flex items-center gap-2 px-5 mt-8 md:px-0 md:ml-10 md:mt-[20px]">
                         <label htmlFor="message" className="text-[#371275] font-semibold">
                             Message
@@ -119,9 +143,25 @@ const ContactNow = () => {
                             className="bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4 p-3"
                         />
                     </div>
+
+                    {/* ✅ Message below the textarea */}
+                    {statusMessage && (
+                        <div
+                            className={`text-sm mt-2 md:ml-10 ${
+                                messageType === 'success' ? 'text-[#371275]' : 'text-red-600'
+                            }`}
+                        >
+                            {statusMessage}
+                        </div>
+                    )}
+
                     <br />
+
                     <div className="flex items-center gap-2 md:mt-[20px] md:ml-10 justify-center">
-                        <button type="submit" className="bg-[#371275] text-[#FFBD05] w-[150px] h-[40px] rounded-[5px] duration-300 hover:bg-[#181224] ml-15 md:ml-0">
+                        <button
+                            type="submit"
+                            className="bg-[#371275] text-[#FFBD05] w-[150px] h-[40px] rounded-[5px] hover:bg-[#371280] ml-15 md:ml-0"
+                        >
                             SEND
                         </button>
                     </div>

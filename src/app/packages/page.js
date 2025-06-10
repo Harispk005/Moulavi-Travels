@@ -10,6 +10,7 @@ import Faq from '../components/Faq';
 import WhatsappAndCall from '../components/WhatsappAndCall';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import bg from '../Images/packagesbg.jpg'
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
@@ -64,7 +65,13 @@ const Page = () => {
             <div className='flex flex-col justify-center'>
                 {/* Hero Section */}
                 <div className='relative w-full h-[60vh] md:h-screen overflow-hidden'>
-
+                     <Image
+                        src={bg}
+                        priority
+                        alt='BG'
+                        fill
+                        className='object-cover'
+                    />
                     <div className='absolute inset-0 bg-[#371275] opacity-50 z-10'></div>
 
                     <div className='absolute inset-0 flex flex-col justify-center px-4 md:px-10 z-20 pt-10'>
