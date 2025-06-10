@@ -302,22 +302,6 @@ export default function ChangePasswordPage() {
             </button>
           </div>
         </div>
-
-        {/* Additional Security Tips */}
-        <div className="mt-8 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/30 rounded-2xl p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg">
-              <AlertCircle className="h-4 w-4 text-white" />
-            </div>
-            <h3 className="text-lg font-bold text-white">Security Tips</h3>
-          </div>
-          <div className="space-y-2 text-sm text-amber-200">
-            <p>• Never share your password with anyone</p>
-            <p>• Use a unique password that you don&apos;t use elsewhere</p>
-            <p>• Consider using a password manager</p>
-            <p>• Change your password regularly for better security</p>
-          </div>
-        </div>
       </main>
     </div>
   )

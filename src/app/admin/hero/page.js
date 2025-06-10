@@ -403,7 +403,7 @@ export default function HeroEditor() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Maximum Heroes Reached</h3>
             <p className="text-amber-200">
-              You&apos;ve reached the maximum limit of 3 hero sections. Delete an existing hero to add a new one.
+             {` You've reached the maximum limit of 3 hero sections. Delete an existing hero to add a new one.`}
             </p>
           </div>
         )}
