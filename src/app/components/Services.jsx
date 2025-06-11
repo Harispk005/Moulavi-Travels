@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 import plane from '../Images/Airplane Take Off.png';
 import hotel from '../Images/Hotel.png';
-import beach from '../Images/Beach Umbrella.png';
+import beach from '../Images/newbus-card.png';
 import hajj from '../Images/Kaaba.png';
 import globe from '../Images/Cryptocurrency Global.png';
 import file from '../Images/Documents.png';
@@ -96,7 +96,7 @@ const Services = () => {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className='bg-[#371275] text-white p-3 md:p-5 rounded-lg flex flex-col h-[230px]'
+              className='bg-[#371275] text-white p-3 md:p-5 rounded-lg flex flex-col '
               custom={index}
               initial="hidden"
               animate={controls}

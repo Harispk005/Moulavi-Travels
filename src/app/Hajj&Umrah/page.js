@@ -11,6 +11,7 @@ import Faq from '../components/Faq';
 import SacredJourneys from './SacredJourneys';
 import WhatsappAndCall from '../components/WhatsappAndCall';
 import { motion } from 'framer-motion';
+import Footer from '../components/Footer';
 
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
@@ -175,6 +176,7 @@ const Page = () => {
                 <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
+                <Footer/>
 
             </div>
         </div>

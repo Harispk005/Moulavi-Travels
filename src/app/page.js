@@ -87,7 +87,7 @@ export default function Home() {
       <div className="fixed bottom-5 right-4 flex flex-col gap-4 z-40  ">
      
         <a
-          href="https://wa.me/966552678666?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20ticket%20with%20Moulavi%20Travels."
+          href="https://wa.me/+966533111487?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20ticket%20with%20Moulavi%20Travels."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-[50%] h-[53px] flex justify-center items-center shadow-lg transition"

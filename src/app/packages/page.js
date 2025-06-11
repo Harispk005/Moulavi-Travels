@@ -11,6 +11,7 @@ import WhatsappAndCall from '../components/WhatsappAndCall';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import bg from '../Images/packagesbg.jpg'
+import Footer from '../components/Footer';
 
 const inknutAntiqua = Inknut_Antiqua({ weight: '600', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
@@ -180,6 +181,7 @@ const Page = () => {
                 <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
+                <Footer/>
             </div>
         </div>
     );

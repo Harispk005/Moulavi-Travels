@@ -53,7 +53,7 @@ const WhatsappAndCall = ({ id }) => {
         </motion.a>
 
         <motion.a
-          href="https://wa.me/966552678666?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20ticket%20with%20Moulavi%20Travels."
+          href="https://wa.me/+966533111487?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20ticket%20with%20Moulavi%20Travels."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#FFBD05] text-[#371275] h-[50px] w-[180px] border-2 border-[#371275] flex items-center justify-center rounded-2xl hover:bg-[#371275] hover:text-[#FFBD05] transition-colors duration-300"
