@@ -17,11 +17,11 @@ export const metadata = {
   openGraph: {
     title: "Moulavi Travels",
     description: "JOURNEY WITH FAITH, EXPLORE WITH WONDER",
-    url: "", 
+    url: "https://www.moulavitravels.com/", 
     siteName: "Moulavi Travels",
     images: [
       {
-        url: "",
+        url: "https://www.moulavitravels.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Moulavi Travels OG Image",
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/moulavi-icon.png" sizes="any" type="image/png" />
+        <link rel="icon" href="https://www.moulavitravels.com/moulavi-icon.png" sizes="any" type="image/png" />
       </head>
 
       <body

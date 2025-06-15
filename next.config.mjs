@@ -3,7 +3,7 @@ const nextConfig = {
     turbo: false,
   },
    images: {
-    domains: ['res.cloudinary.com'], // ✅ Add your image host here
+    domains: ['res.cloudinary.com'],
   },
 };
 
