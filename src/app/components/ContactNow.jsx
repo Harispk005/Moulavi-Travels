@@ -12,7 +12,7 @@ const inter = Inter({ weight: '600', subsets: ['latin'] });
 const ContactNow = () => {
     const form = useRef();
     const [statusMessage, setStatusMessage] = useState('');
-    const [messageType, setMessageType] = useState(''); // 'success' or 'error'
+    const [messageType, setMessageType] = useState('');
 
     const validateEmail = (email) => {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -64,14 +64,14 @@ const ContactNow = () => {
                 <div>
                     <div className="flex items-center gap-2 px-8 md:px-8 lg:ml-60 md:mt-7">
                         <label htmlFor="name" className="text-[#371275] font-semibold">
-                            Name<span className="text-red-500 ml-1">*</span>
+                            Name*
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             required
-                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 px-2 text-[#371275] ${inter.className} text-[14px]`}
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-65 md:w-90 text-[14px] text-[#371275] ${inter.className}`}
                         />
                     </div>
                     <div className="hidden md:block md:mt-25 md:absolute">
@@ -88,14 +88,14 @@ const ContactNow = () => {
                             type="text"
                             id="mobile"
                             name="mobile"
-                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8 px-2 text-[#371275] ${inter.className} text-[14px]`}
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 md:ml-5  text-[14px] text-[#371275] ${inter.className}`}
                         />
                     </div>
 
                     <br />
 
                     <div className="flex items-center gap-2 px-8 mt-8 md:px-0 md:ml-10 md:mt-[20px]">
-                        <label htmlFor="email" className={`text-[#371275] font-semibold ${inter.className}`}>
+                        <label htmlFor="email" className="text-[#371275] font-semibold">
                             Email
                         </label>
                         <input
@@ -103,7 +103,7 @@ const ContactNow = () => {
                             id="email"
                             name="email"
                             required
-                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8 px-2 text-[#371275] ${inter.className} text-[14px]`}
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8  text-[14px] text-[#371275] ${inter.className}`}
                         />
                     </div>
 
@@ -111,16 +111,17 @@ const ContactNow = () => {
                     <br />
 
                     <div className="flex items-center gap-2 px-8 md:px-0 md:ml-10 md:mt-[20px]">
-                        <label htmlFor="selectType" className={`text-[#371275] font-semibold ${inter.className}`}>
+                        <label htmlFor="selectType" className="text-[#371275] font-semibold">
                             Select Type
                         </label>
                         <select
                             id="selectType"
                             name="type"
-                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2  text-[#371275] px-2 ${inter.className} text-[14px]`}
+                            required
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-66 md:w-87 mr-2  text-[14px] text-[#371275] ${inter.className}`}
                         >
-                            <option value="" disabled selected> Select a Service </option>
-                            <option className='text-[#371275]' value="International & Domestic Flight Ticket">International & Domestic Flight Tickets</option>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="International & Domestic Flight Ticket">International & Domestic Flight Tickets</option>
                             <option value="Worldwide Tour Packages">Worldwide Tour Packages</option>
                             <option value="Visa Services">Visa Services</option>
                             <option value="Ziyarah Packages: Madinah, Makkah & Taif">Ziyarah Packages: Madinah, Makkah & Taif</option>
@@ -129,7 +130,6 @@ const ContactNow = () => {
                             <option value="Hotel Bookings">Hotel Bookings</option>
                             <option value="Cruise Packages">Cruise Packages</option>
                             <option value="Other">Other Services</option>
-
                         </select>
                     </div>
 
@@ -143,11 +143,9 @@ const ContactNow = () => {
                             id="message"
                             name="message"
                             required
-                            className={`bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4 p-3 text-[#371275] ${inter.className} text-[14px]`}
-                        />
+                            className={`bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-64 md:w-90 md:ml-4 p-3  text-[14px] text-[#371275] ${inter.className}`}                        />
                     </div>
 
-                    {/* ✅ Message below the textarea */}
                     {statusMessage && (
                         <div
                             className={`text-sm mt-2 md:ml-10 ${messageType === 'success' ? 'text-[#371275]' : 'text-red-600'
