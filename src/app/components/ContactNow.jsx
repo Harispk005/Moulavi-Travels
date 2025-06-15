@@ -64,14 +64,14 @@ const ContactNow = () => {
                 <div>
                     <div className="flex items-center gap-2 px-8 md:px-8 lg:ml-60 md:mt-7">
                         <label htmlFor="name" className="text-[#371275] font-semibold">
-                            Name*
+                            Name<span className="text-red-500 ml-1">*</span>
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             required
-                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90"
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 px-2 text-[#371275] ${inter.className} text-[14px]`}
                         />
                     </div>
                     <div className="hidden md:block md:mt-25 md:absolute">
@@ -88,14 +88,14 @@ const ContactNow = () => {
                             type="text"
                             id="mobile"
                             name="mobile"
-                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 md:ml-5"
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8 px-2 text-[#371275] ${inter.className} text-[14px]`}
                         />
                     </div>
 
                     <br />
 
                     <div className="flex items-center gap-2 px-8 mt-8 md:px-0 md:ml-10 md:mt-[20px]">
-                        <label htmlFor="email" className="text-[#371275] font-semibold">
+                        <label htmlFor="email" className={`text-[#371275] font-semibold ${inter.className}`}>
                             Email
                         </label>
                         <input
@@ -103,7 +103,7 @@ const ContactNow = () => {
                             id="email"
                             name="email"
                             required
-                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8"
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-70 md:w-90 ml-2 md:ml-8 px-2 text-[#371275] ${inter.className} text-[14px]`}
                         />
                     </div>
 
@@ -111,22 +111,25 @@ const ContactNow = () => {
                     <br />
 
                     <div className="flex items-center gap-2 px-8 md:px-0 md:ml-10 md:mt-[20px]">
-                        <label htmlFor="selectType" className="text-[#371275] font-semibold">
+                        <label htmlFor="selectType" className={`text-[#371275] font-semibold ${inter.className}`}>
                             Select Type
                         </label>
                         <select
                             id="selectType"
                             name="type"
-                            className="bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2"
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-120 md:w-87 mr-2  text-[#371275] px-2 ${inter.className} text-[14px]`}
                         >
-                            <option value=""></option>
-                            <option value="International">International</option>
-                            <option value="Domestic">Domestic</option>
-                            <option value="Tour">Tour</option>
-                            <option value="Visa">Visa</option>
-                            <option value="Ticket">Ticket</option>
-                            <option value="Hotel">Hotel</option>
-                            <option value="Other">Other</option>
+                            <option value="" disabled selected> Select a Service </option>
+                            <option className='text-[#371275]' value="International & Domestic Flight Ticket">International & Domestic Flight Tickets</option>
+                            <option value="Worldwide Tour Packages">Worldwide Tour Packages</option>
+                            <option value="Visa Services">Visa Services</option>
+                            <option value="Ziyarah Packages: Madinah, Makkah & Taif">Ziyarah Packages: Madinah, Makkah & Taif</option>
+                            <option value="Saudi Arabia Tour Packages: AlUla, Abha & Al Bahah">Saudi Arabia Tour Packages: AlUla, Abha & Al Bahah</option>
+                            <option value="Visa Renewal: Family, Personal & Business">Visa Renewal: Family, Personal & Business</option>
+                            <option value="Hotel Bookings">Hotel Bookings</option>
+                            <option value="Cruise Packages">Cruise Packages</option>
+                            <option value="Other">Other Services</option>
+
                         </select>
                     </div>
 
@@ -140,16 +143,15 @@ const ContactNow = () => {
                             id="message"
                             name="message"
                             required
-                            className="bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4 p-3"
+                            className={`bg-transparent border-2 h-[80px] border-[#371275] rounded-[10px] focus:outline-none w-70 md:w-90 md:ml-4 p-3 text-[#371275] ${inter.className} text-[14px]`}
                         />
                     </div>
 
                     {/* ✅ Message below the textarea */}
                     {statusMessage && (
                         <div
-                            className={`text-sm mt-2 md:ml-10 ${
-                                messageType === 'success' ? 'text-[#371275]' : 'text-red-600'
-                            }`}
+                            className={`text-sm mt-2 md:ml-10 ${messageType === 'success' ? 'text-[#371275]' : 'text-red-600'
+                                }`}
                         >
                             {statusMessage}
                         </div>

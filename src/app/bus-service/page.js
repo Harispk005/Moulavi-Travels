@@ -271,8 +271,8 @@ const Page = () => {
                                     <td className="px-6 py-4 border-b border-[#371275]">{item.status}</td>
                                     <td className="px-6 py-4 border-b border-[#371275]">
                                         <a
-                                            href={`https://wa.me/966552678666?text=${encodeURIComponent(
-                                                `Hi, I'm interested in booking a bus to ${item.destination} (Route: ${item.route}) departing at ${item.time} on ${item.daysAvailable}.`
+                                            href={`https://wa.me/966533111487?text=${encodeURIComponent(
+                                                `Hi, I'm interested in booking a bus to ${item.destination} (Route: ${item.route}) on ${item.daysAvailable} departing at ${item.time}.`
                                             )}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
