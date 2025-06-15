@@ -66,7 +66,7 @@ const Page = () => {
             <div className='flex flex-col justify-center'>
                 {/* Hero Section */}
                 <div className='relative w-full h-[60vh] md:h-screen overflow-hidden'>
-                     <Image
+                    <Image
                         src={bg}
                         priority
                         alt='BG'
@@ -103,7 +103,7 @@ const Page = () => {
                             </h2>
 
                             {/* Loop through each poster */}
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 mt-10'>
                                 {posters.map((poster, idx) => (
                                     <div key={idx} className='bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300'>
                                         <div className='w-full h-[500px] relative'>
@@ -111,7 +111,7 @@ const Page = () => {
                                                 src={poster.image}
                                                 alt={`poster-${idx}`}
                                                 fill
-                                                className='object-cover'
+                                                className='object-contain'
                                             />
                                         </div>
                                         <div className='p-4 flex flex-col gap-2'>
@@ -121,8 +121,6 @@ const Page = () => {
                                     </div>
                                 ))}
                             </div>
-
-
                         </div>
                     </div>
                 )}
@@ -181,7 +179,7 @@ const Page = () => {
                 <WhatsappAndCall id='call' />
                 <Faq />
                 <Contact />
-                <Footer/>
+                <Footer />
             </div>
         </div>
     );
