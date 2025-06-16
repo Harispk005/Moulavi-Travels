@@ -111,16 +111,16 @@ const ContactNow = () => {
                     <br />
 
                     <div className="flex items-center gap-2 px-8 md:px-0 md:ml-10 md:mt-[20px]">
-                        <label htmlFor="selectType" className="text-[#371275] font-semibold">
+                        <label htmlFor="selectType" className="text-[#371275] font-semibold text-nowrap">
                             Select Type
                         </label>
                         <select
                             id="selectType"
                             name="type"
                             required
-                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-66 md:w-87 mr-2  text-[14px] text-[#371275] ${inter.className}`}
+                            className={`bg-transparent border-b-2 border-[#371275] focus:outline-none w-54 md:w-87 mr-2  text-[14px] text-[#371275] ${inter.className}`}
                         >
-                            <option value="" disabled selected>Select a service</option>
+                            <option value=""  >Select a service</option>
                             <option value="International & Domestic Flight Ticket">International & Domestic Flight Tickets</option>
                             <option value="Worldwide Tour Packages">Worldwide Tour Packages</option>
                             <option value="Visa Services">Visa Services</option>
